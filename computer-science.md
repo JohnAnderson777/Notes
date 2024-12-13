@@ -35,6 +35,19 @@ MDR(Memory data register) - temporarily store data read/written to memory - aka 
   3. Maintenance easier - can troubleshoot and modify program easier
   4. Reinforces security
 
+## Networks
+### Internet
+Internet - network of inter-connected networks - largest public network (largest WAN)
+WWW, World Wide Web - collection of resources accessed by the internet
+Backbone - set of dedicated connections connecting several networks at certain points, then connected to regional networks managed by ISPs
+ISP - Internet Service Provider - provides access to individual end-users
+IP - unique identifier of device and destination, like an address on package
+IPv4 - 4 octet values (4 numbers made by 8 bits) - separated by full stop - e.g 14.132.250.10 - only 4.3Bil addresses total
+IPv6 - 340 undecillion addresses (not needed)
+
+URL - specify means of accessing resource across network and location - protocol + domain name
+  - protocol (https://) - specifies resources requires HTTP (webpage)
+  - domain name - (www.bbc.co.uk/index.html) - index.html is name of resource to be accessed
 
 
 
