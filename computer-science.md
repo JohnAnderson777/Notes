@@ -50,7 +50,22 @@ URL - specify means of accessing resource across network and location - protocol
   - domain name - (www.bbc.co.uk/index.html) - index.html is name of resource to be accessed
 
 
+## Binary
+Twos complement:
+- MSB is negative, subtract rest from that number to get number
+- To convert: 1) Write number as positive
+- 2) Flip all digits
+- 3) Add 1
+- half range of values now represents negative numbers - from -128 to 127 (255 total)
+  - number over 127 = overflow
 
+Fractions:
+- fractional values are negative powers of 2, e.g 2^-2 = 0.25
+- Floating point binary value: 
+- size of number increases as accuracy decreases, decimal point somewhere on byte
+  - less size = better accuracy , more size = less accuracy
+- Mantissa = number itself
+- Exponent = position of binary point in number
 
 
 
