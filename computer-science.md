@@ -107,8 +107,8 @@ Execute:
 Speed of computer measured in Hz or GHz
 Hertz - how many F-D-E cycles are performed per second (4 GHz = 4 Billion cycles)
 Core - individual processing unit in CPU - can process 1 instruction at a time
-1) Cache Size - more gives faster access to more data - if cache fills up, some commonly accessed instructions have to be stored on further level - slower. More = stays fast on higher capacities
-2) Cores - more cores means more instructions can be carried out at once = faster processing - 2 cores doesn't mean 2x speed as software might not need to use full capacity of both cores
+1) Cache Size - more gives faster access to more data - if cache fills up, some common instructions stored on further level - slower. More = stays fast on higher capacities
+2) Cores - more cores = more instructions carried out at once = faster processing - 2 cores doesn't mean 2x speed as software might not need to use full capacity of both cores
 3) Clock speed - number of instructions processor can carry out per second - speed of core (Hz) = upgrading this will always mean faster processing
 
 
@@ -484,7 +484,7 @@ x.length - Outputs length of string (Starts at 1)
 x.upper - changes string to all upper case
 x.lower - string all lower case
 x(i) - Outputs character in position of integer(i) (Starts from 0)
-x.substring(a,b) - Gives characters from a with length b. (e.g x=word, x.substring(2,2) = "rd")
+x.substring(a,b) - Gives characters from a with length b. (e.g x=words, x.substring(2,2) = "rd")
 #### File handling
 file = openRead("myfile.txt") - Opens file in read mode
 file = openWrite("myfile.txt") - Opens in write mode

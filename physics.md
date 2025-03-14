@@ -16,7 +16,6 @@ Exchange particles (aka virtual particles):
     - Attraction - exchange particle goes around and carries force into each other to attract them closer together.   
 
 
-
 Gauge Bosons:
 
 Each fundamental force has its own exchange particle - called gauge bosons - virtual photons, W bosons, pions
@@ -69,6 +68,79 @@ pair production - photon with nucleus - makes particle-antiparticle pair- photon
 
 
 
+
+
+
+
+## Quantum Physics
+
+Specific charge = charge/mass
+Electron volt - work done of electron moving through a p.d of 1V
+
+SNF - attractive, pulls nucleus together - protons & neutrons - short-ranged
+  - attractive up to 3fm, then rapidly falls to 0. Below 0.5fm, its repulsive. || attractive - 0.5 < SNF < 3
+- in stable nuclei, SNF and EM force are balanced.
+
+Alpha decay - 2 protons, 2 neutrons, Mass no. decreases by 4, proton no. by 2
+Beta- decay - nucleon to proton - electron emitted + ANTI-neutrino
+    - A|Z X --> A|(Z+1) Y + 0|-1 e + 0|0 /ve
+
+### Energy levels
+Ground state - lowest level - n=1
+- If electron not on ground state, it is excited
+- to excite, must absorb exact energy difference in 2 levels
+Excitation - electron going to higher level - absorb photon or collide with free electron, absorb kinetic energy
+Ionisation - electron gains enough energy to leave atom
+de-excitation - electron falls down to original state - emits photon
+- line at bottom has most negative energy
+- as you go up, energy increases (goes closer to 0)
+Flourescent lamps - contain mercury vapour - high voltage applied, accelerates electrons - collide with mercury & excite & de-excite - emitted UV photon absorbed by phosphorus coating, excites & de-excites again - emit light as lower-energy photons
+
+- each element has unique set of spectral lines
+Emission spectrum - flourescent light into diffraction grating, electron de-excites, emits photon at specific wavelength
+ - provide evidence electrons transition in discrete energy levels
+Absorption spectra - continuous light passes through cold gas - electrons in gas excite, leave black gap - when they de-excite, photon emitted in all directions, doesn't come back
+- Energy levels: change in E = hf = E2 - E1 (lower - higher level)
+  - λ = hc / E2 - E1
+
+### Wave-particle duality
+- all particles display wave & particle properties
+Light: 
+-  wave: diffraction (interference pattern)
+-  particle: photoelectric effect  - for given metal, no photoelectrons emitted below radiation threshold frequency, no matter intensity
+      -  When electrons emitted, energy depends on frequency, not amplitude
+      -  Electrons emitted immediately if light above threshold frequency
+
+
+Electron:
+- wave: diffraction pattern - e- beam hits thin graphite sheet - strikes flourescent screen, produces circle pattern - Proves waves because:
+  - Particle would only produce a circle of light
+  - electron must've diffracted - pass through spaces between atoms of crystals, proving wave
+
+- particle: deflected in electric fields
+
+### Photoelectric Effect
+- free electrons near surface of metal absorb photons, excite out of metal (ionise)
+Threshold frequency - minimum frequency of incident light needed  to release electron - f0 = φ/h
+Work function - minimum energy needed for electron to escape surface - hf > φ || - φ = hf0
+Energy of photon, E = hf, = hc/λ, = φ + KE
+K.E(max) = hf - φ - extra energy is KE
+- electron below needs to do work/use energy to reach surface
+- graph of K.E(max) against frequency 
+     - Y-intercept = φ, Work function
+     - X-intercept = f0, threshold freq.
+     - Gradient = h, planks constant
+Photocell - glass vacuum, metal & electrode, electrons emitted captured by electrode to circuitx     
+More frequency = more K.E on released electron - faster
+More intensity = more electrons released
+
+Stopping potential - potential difference needed to stop fastest(max) photoelectrons - V = KE(max)/e (electron charge)
+- KE(max) = eV --> V = KE/e
+De broglie wavelength - λ = h/mv (momentum)
+
+
+
+
 ### Time graphs
 ##### Distance-time graphs:
 Horizontal = stationary
@@ -82,6 +154,10 @@ negative gradient = decelerating (constant)
 Gradient = acceleration
 Distance = area under graph
 ##### Acceleration
+
+
+
+
 
 # GCSE
 Repel - two objects with the same charge push away from each other

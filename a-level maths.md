@@ -153,7 +153,11 @@ Variation - how spread out data is from mean. Measures of variation:
 Cumulative frequency graph - CF goes on y-axis, plot on upper-class boundaries
 Box plots - (comparing) - higher median = higher avg, higher IQR = more variation
 
-Coding - doing an operation on every data value to simplify it
+Coding - doing an operation on every value in data set, simplifying x --> y
+   decoding - doing inverse operation of coding to find x || y = (x - a)/b ==> x = by + a
+   Mean - y = x-a/b, mean y = (mean x) - a / b
+   Standard deviation - addition/subtraction doesnt affect it, only multiply/divide
+
 
 ### Probability
 Outcome - a possibility that can happen
