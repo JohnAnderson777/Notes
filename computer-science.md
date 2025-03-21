@@ -47,7 +47,21 @@ IPv6 - 340 undecillion addresses (not needed)
 
 URL - specify means of accessing resource across network and location - protocol + domain name
   - protocol (https://) - specifies resources requires HTTP (webpage)
-  - domain name - (www.bbc.co.uk/index.html) - index.html is name of resource to be accessed
+  - domain name - (bbc.co.uk/index.html) - index.html is name of resource to be accessed
+  - fully qualified domain name - includes host server name (www, mail, ftp)
+
+#### Topology
+Bus topology - all computers connected to single cable - ends of cable plugged into terminator
+ - Adv: Inexpensive - less cable, no additional hardware
+ - Dis: If main cable fails, network data can't be transmitted
+   - Performance degrades with heavy traffic
+   - Low security - all computers can see all data transmissions
+
+Star topology - central node to transmit messages
+ - switch keeps a record of unique MAC addresses of each device, knows which computer to send data to
+- Adv:
+  - Cables independent - if one fails, only one station affected
+
 
 
 ## Binary
@@ -67,7 +81,32 @@ Fractions:
 - Mantissa = number itself
 - Exponent = position of binary point in number
 
+### Abstract data types
+1) Queue
+2) Stack
+3) Linked list
 
+Stacks: - LIFO
+.push(item) - adds item to top of stack
+.pop() - removes & returns item at top of stack
+.isFull() - checks if stack is full
+.isEmpty() - checks if stack is empty
+.peek() - checks/returns top item
+.size - returns number of items in stack
+
+lists:
+.append(item) - add item to end of list
+.pop() - remove item at end of list
+len(stack) - returns number of items in list
+
+Overflow -  .push onto a full stack
+Underflow - .pop from an empty stack
+
+Call stack - system data structure 
+  - subroutine calls:
+    - parameters saved on stack
+    - address which execution returns after end of subroutine is reached is saved onto stack
+    - Execution transferred to subroutine code
 
 
 
