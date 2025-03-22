@@ -65,11 +65,25 @@ Star topology - central node to transmit messages
 - Adv:
   - Cables independent - if one fails, only one station affected
   - no traffic - high performance even when network heavily used
-  - higher transmission speeds  
+  - higher transmission speeds
+  - no collisions
+  - more secure - messages can't be intercepted by stations
+  - Easy to add new devices
+- Dis:
+  - costly - length of cable
+  - if central device down, data can't be transmitted
+
+Mesh topology - each node connected to every node - only 1 node requires internet
+- Adv:
+  - no cabling costs
+  - more nodes = faster, more reliable - one broken connection easily reroutable (self healing)
+  - new nodes automatically incorporated in network
+  - faster communication - data packets dont need to travel to center
 
 Circuit switching - direct link between 2 devices for duration of communication
 Packet switching - method of communication packets of data across network - each packet has own route, switching at every router
-
+physical topology - actual layout
+logical topology - shape of path that data travels in  -how components communicate across physical topology
 
 
 ## Binary
