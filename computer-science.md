@@ -50,6 +50,9 @@ URL - specify means of accessing resource across network and location - protocol
   - domain name - (bbc.co.uk/index.html) - index.html is name of resource to be accessed
   - fully qualified domain name - includes host server name (www, mail, ftp)
 
+LAN - Local Area Network
+WAN - Wide area network
+
 #### Topology
 Bus topology - all computers connected to single cable - ends of cable plugged into terminator
  - Adv: Inexpensive - less cable, no additional hardware
@@ -61,6 +64,11 @@ Star topology - central node to transmit messages
  - switch keeps a record of unique MAC addresses of each device, knows which computer to send data to
 - Adv:
   - Cables independent - if one fails, only one station affected
+  - no traffic - high performance even when network heavily used
+  - higher transmission speeds  
+
+Circuit switching - direct link between 2 devices for duration of communication
+Packet switching - method of communication packets of data across network - each packet has own route, switching at every router
 
 
 
