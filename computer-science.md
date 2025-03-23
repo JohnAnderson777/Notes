@@ -2,6 +2,7 @@
 
 # A - Level
 
+## Computer Components
 Control Unit - controls, coordinates CPU activity - directs flow of data between CPU & devices, decodes instructions, stores resulting data back in memory/registers
 Bus - set a of parallel wires connecting computer components - 8,16,32,64 lines
 address bus - when CPU sends address to memory - transmits memory addresses of words used in instructions, so data can be retrieved & sent to processor.
@@ -22,10 +23,54 @@ Accumulator -
 PC(Program counter) - holds address of next instruction to be executed 
   - if current instruction is a branch/jump, holds address to jump to, copied from CIR
 Current Instruction Register(CIR) - holds current instruction execuded, operand and opcode
+ - opcode - determine type of instruction, what hardware to execute it
+ - operand holds either: address of data, copied to MAR \\ actual data, copied to MDR or to ALU  
 MAR(Memory address register) - address of memory location from which data is to be fetched or written
 MDR(Memory data register) - temporarily store data read/written to memory - aka memory buffer register
 
-### OOP
+3 factors processor performance:
+1) Clock speed - 1 Hz = 1 clock cycle per second - greater clock speed = instructions executed faster - upgrading always makes faster
+2) No of cores - can process different instructions at once, less wait = faster - 2 cores doesnt mean 2x speed
+3) Cache size - fetch more frequent instructions quickly, faster access to more data, much quicker than main memory - stays fast on higher capacities
+
+Cache - level 1 - really fast, small storage (2-64 KB)
+      - level 2 - less fast, medium storage (256kb- 2MB)
+
+#### Neumann vs Harvard architecture
+Neumann:
+- same data bus used to transfer both data & instructions
+- single address bus used to transfer addresses of data&instructions
+  - same word length used for all memory
+- used in PCs, servers, embedded system with control functions
+- Programs optimised in size
+
+Harvard:
+- separate memories for data & instructions - different characteristics (e.g read-only vs read-write)
+  - prevents resource conflicts - faster execution - needed for real-time applications
+- sometimes - more instruction memory than data memory - larger word size used for instructions
+- instruction address bus wider than data bus
+- parallel data & instruction buses used
+- used in DSP - digital signal processing - + Embedded systems
+- programs usually large
+
+##### CISC VS RISC
+CISC - Complex instruction - large instruction set - Single instruction doing loading,operation,storing
+- used more in microcontrollers, embedded systems
+- Adv:
+  - compiler low work to translate high-level language to machine code - code shorter, little RAM required to store
+- Dis:
+  - many specialised instructions built into hardware, but only some (20%) used in average program
+
+RISC - Reduced Instruction - small instruction set 
+- each instruction 1 line of machine code, takes 1 clock cycle
+- Adv:
+  - pipelining possible - each instruction takes same amount of time
+  - faster - execute at least as fast as single CISC instruction
+- Dis:
+  - compiler has to do more work to translate high-level code
+  - more RAM needed to store machine code instructions
+
+## OOP
 - works best in situations where you can encapsulate and model entities as objects.
 - useful for GUIs
 - computer games are a good example of the use of OOP - characters,players, items, enemies etc with methods
@@ -49,6 +94,8 @@ URL - specify means of accessing resource across network and location - protocol
   - protocol (https://) - specifies resources requires HTTP (webpage)
   - domain name - (bbc.co.uk/index.html) - index.html is name of resource to be accessed
   - fully qualified domain name - includes host server name (www, mail, ftp)
+
+DNS - Domain Name System - translates domain into IP address - finds area URl is located in - .com, .org, .edu, .uk, 
 
 LAN - Local Area Network
 WAN - Wide area network
@@ -79,11 +126,57 @@ Mesh topology - each node connected to every node - only 1 node requires interne
   - more nodes = faster, more reliable - one broken connection easily reroutable (self healing)
   - new nodes automatically incorporated in network
   - faster communication - data packets dont need to travel to center
+- Dis:
+  - high maintenance - IT staff
+  - hard to install a new node
 
-Circuit switching - direct link between 2 devices for duration of communication
-Packet switching - method of communication packets of data across network - each packet has own route, switching at every router
 physical topology - actual layout
 logical topology - shape of path that data travels in  -how components communicate across physical topology
+
+
+Circuit switching - direct link between 2 devices for duration of communication - sets up a path between devices, when used next time, established route
+  - can only connect devices on same transfer rate
+Packet switching - each packet has own route, switching at every router
+
+Explain what is meant by 'packet switching' [3]:
+- ** Message is split into packets/chunks (1)
+- Each packet is given destination and source IP address 
+- Each packet dispatched to Internet through router/gateway 
+- Packets sent independently, given a sequence number
+- routers forward packets towards destination node
+- path of transfer determined by routers
+- ** Packets reassembled at destination node, in order (1)
+
+Gateway - router for when protocols different between networks - all header data stripped, new data added in form of other Protocol
+MAC address - Media access control - unique to every device, by manufacturer - 48 bits, 12 hex digits - 00-09-5D-E3-F7-62
+
+#### Protocols
+Protocol - set of rules allowing data communication
+HTTP - Hyper Text Transfer - standard for browsers to render web pages
+TCP/IP - enables communication with any other device connected to internet
+- set of protocols as 4 layers, passing data packets up&down layers 
+- 1) Application layer: 
+  - selects protocol for application being used to transmit data over network(internet)
+  - HTTP, FTP
+- 2) Transport layer:
+  - establish end-to-end connection with recipient - packets labelled with number, total no. of packets, port - ensures handled by correct application for recipient
+  - If any packets get lost, requests resent - receipt of packets acknowledged 
+  - TCP
+- 3) Internet:
+  - adds source and destination IP address
+  - routers operate on network, need IP + port to forward packets to destination 
+  - Socket - IP + port number - specifies which device packet is sent to & application used on device
+- 4) Link:
+  - physical connection between nodes, adds unique MAC address of source & destination computers
+
+- at recieving end - all data stripped off as it goes up layers, packets reassembled
+- each layer independent - can be changed without affecting others
+
+POP3 - Post Office - retrieving emails from mail server, temporarily stores your incoming mail, transferred to local computer, deleted from server - dont sync across devices
+IMAP - Internet Message Access- keep emails on server, synchronises across devices
+SMTP - Simple Mail transfer - transfer outgoing emais from one server to another // email client to server
+
+### Security & Threats
 
 
 ## Binary
