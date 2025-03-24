@@ -70,6 +70,49 @@ RISC - Reduced Instruction - small instruction set
   - compiler has to do more work to translate high-level code
   - more RAM needed to store machine code instructions
 
+Co-processor - extra processor to supplement functions of cpu - limited functions
+GPU - co-processor - independent processors in parallel - very efficient at image processing, machine learning
+
+Multi-core - multiple independent cores - distribute workload - higher performance
+parallel - single core, use threading
+
+## Databases
+Lossy compression - remove unneeded info - less file size, worse quality
+lossless - shrinks & reassembles data again - much larger file size, keep quality
+
+Caeser cipher - shifting letters of alphabet along given number (key) - easy to break with little computer power
+symmetric encryption - private key - same key to encrypt&decrypt - key transferred - not secure
+asymmetric - 2 related keys, public key: to encrypt private: only for you, to decrypt
+
+Hashing - mapping between arbitrary length input - smaller fixed output - one-way (irreversible)
+
+Flat file - single file - one entity
+primary key -  unique identifier of an entity
+1-to-1 - husband & wife
+1-to many - mother & children || customer & order
+many-to-many - student & course || film & actor
+foreign key - links 2 tables/relations (entities) - primary key
+
+- for many-to-many - extra table needed to link together - two foreign keys = composite
+composite primary key - primary key with multiple attributes
+
+referential integrity - when tables linked, attribute not deleted from one table
+
+relational database - collection of tables - shared attributes
+Normalisation - process for best possible design for database
+ - no data duplicated
+ - data consistent - automatic consequence of no duplicates
+ - structure flexible - allow you enter as many or few items u want
+ - structure - make complex queries
+1NF - no repeating attributes
+2NF - 1NF + no partial dependencies - primary key is NOT composite
+3NF - 2NF + non-key dependencies - value of attribute determined by value of another attribute, not part of key
+  - all attributes dependent on ONLY key
+- Adv:
+  - no data redundancy
+  - easy maintain & change
+  - faster sorting/searching
+
 ## OOP
 - works best in situations where you can encapsulate and model entities as objects.
 - useful for GUIs
