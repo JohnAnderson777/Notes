@@ -266,6 +266,31 @@ Call stack - system data structure
     - address which execution returns after end of subroutine is reached is saved onto stack
     - Execution transferred to subroutine code
 
+## Big O notation - O(n)
+- simplified analysis of an algorithm's efficiency - finds runtime and space
+- finds complexity in terms of input size, N
+- machine-independent
+- basic computer steps
+- time & space
+
+Rules:
+- ignores constants || 5n --> O(n)
+- Some terms above others - ignore lower order terms
+- We always use WORST CASE so we take the slowest runtime terms -- O(n!) will be taken above any
+
+#  - O(1) < O(logn) < O(n) < O(n log n) < O(n^2) < O(2^n) < O(n!)
+  fastest ------> slowest
+  low order ----> high order
+  
+- O(1) = constant time - fastest (best) case
+- O(n) = linear time - N * O(1)
+- O(n^2) = quadratic time - N * O(n)
+
+Types of measurements:
+- Worst Case (usual)
+- Best Case
+- Average Case
+
 
 
 
