@@ -111,7 +111,7 @@ Normalisation - process for best possible design for database
 - Adv:
   - no data redundancy
   - easy maintain & change
-  - faster sorting/searching
+  - faster sorting/searching 
 
 ## OOP
 - works best in situations where you can encapsulate and model entities as objects.

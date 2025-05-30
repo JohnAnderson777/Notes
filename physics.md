@@ -1,4 +1,45 @@
 # A(S) - level
+## Experimental techniques
+Hypothesis - suggested solution
+Fair test - all other variables constant
+Control variable - kept constant
+Discrete data - countable - whole value
+Continuous - any value within a scale
+Categoric data - sorted into categories
+Ordered data
+Quantitative data - stats/numbers
+Qualitative - opinions / words
+Anomaly - outlier, unusual result
+Correlation - relationship
+Proportionality - y = kx
+Constant of proportionality - k - links 2 variables (y & x)
+Random error
+Systematic error - shifts all measurements - environment/apparatus/method
+Zero error - gives you a reading when it should be 0
+Absolute uncertainty - certain fixed quantity
+Fractional uncertainty - uncertainty as a fraction of measurement
+Percentage uncertainty - as a percentage of measurement
+- when multiplying data uncertainty, add uncertainties
+- Data to a power (exponent) - multiply uncertainty
+% uncertainty - uncertainty / total measurement
+Error bar - uncertainty bar for each point on graph
+Worst lines - max/min gradient through all error bars in graph
+
+## Quantum Physics - Particles & Radiation
+
+Nuclide notation - a,z X - element format
+Nucleon number - mass number (top)
+Isotope - element - same protons, different number of neutrons - changes stability
+EM force - protons repel each other - inf range
+Gravitational - nucleons attract
+SNF - repulsive <0.5fm, attractive at 1fm, near 0 after 3fm
+Femtometer - 1 x 10^-15m - fm
+Geiger counter
+Cloud chamber
+Spark counter
+EM spectrum - continuous - all frequencies of EM radiation
+ - radio, micro, infra-red, light, UV, x-ray, gamma
+
 
 ### Forces & exchange particles
 
@@ -6,7 +47,7 @@
 1) Gravity - weakest - only particles with mass - inf range
 2) Weak nuclear force - affects all particles - smallest range (10^-18m)
 3) Electromagnetic - only on charged particles - inf range
-4) Strong nuclear force - only hadron - strongest - range of only 10^-15m
+4) Strong nuclear force - only hadrons - strongest - range of only 10^-15m
 
 Exchange particles (aka virtual particles):
 
@@ -63,16 +104,12 @@ Electron capture - electron absorbed by proton in nucleus - proton decays to neu
     - baryon number conserved on left side, lepton number conserved on right
 Electron-proton collisions - electron collides with proton, neutron & neutrino released - W- boson, arrow in opposite direction (upwards)
 
-Annihilation - particle & antiparticle collide - makes 2 photons in opposite directions
-pair production - photon with nucleus - makes particle-antiparticle pair- photon energy atleast TWICE particle rest energy 
+Annihilation - particle & antiparticle collide - makes 2 energy photons in opposite directions
+ - E(min) = E0
+Pair production - photon hits nucleus - makes particle-antiparticle pair - photon energy atleast TWICE particle rest energy(E0)
+ - E(min) = 2E0
 
 
-
-
-
-
-
-## Quantum Physics
 
 Specific charge = charge/mass
 Electron volt - work done of electron moving through a p.d of 1V
@@ -81,49 +118,40 @@ SNF - attractive, pulls nucleus together - protons & neutrons - short-ranged
   - attractive up to 3fm, then rapidly falls to 0. Below 0.5fm, its repulsive. || attractive - 0.5 < SNF < 3
 - in stable nuclei, SNF and EM force are balanced.
 
-Alpha decay - 2 protons, 2 neutrons, Mass no. decreases by 4, proton no. by 2
-Beta- decay - nucleon to proton - electron emitted + ANTI-neutrino
+Alpha decay - big atoms (>82 pr) emit alpha particle - 2 protons, 2 neutrons, Mass no. decreases by 4, proton no. by 2
+Beta- decay - neutron to proton - electron emitted + ANTI-neutrino
     - A|Z X --> A|(Z+1) Y + 0|-1 e + 0|0 /ve
-
-### Energy levels
-Ground state - lowest level - n=1
-- If electron not on ground state, it is excited
-- to excite, must absorb exact energy difference in 2 levels
-Excitation - electron going to higher level - absorb photon or collide with free electron, absorb kinetic energy
-Ionisation - electron gains enough energy to leave atom
-de-excitation - electron falls down to original state - emits photon
-- line at bottom has most negative energy
-- as you go up, energy increases (goes closer to 0)
-Flourescent lamps - contain mercury vapour - high voltage applied, accelerates electrons - collide with mercury & excite & de-excite - emitted UV photon absorbed by phosphorus coating, excites & de-excites again - emit light as lower-energy photons
-
-- each element has unique set of spectral lines
-Emission spectrum - flourescent light into diffraction grating, electron de-excites, emits photon at specific wavelength
- - provide evidence electrons transition in discrete energy levels
-Absorption spectra - continuous light passes through cold gas - electrons in gas excite, leave black gap - when they de-excite, photon emitted in all directions, doesn't come back
-- Energy levels: change in E = hf = E2 - E1 (lower - higher level)
-  - λ = hc / E2 - E1
-
-### Wave-particle duality
-- all particles display wave & particle properties
-Light: 
--  wave: diffraction (interference pattern)
--  particle: photoelectric effect  - for given metal, no photoelectrons emitted below radiation threshold frequency, no matter intensity
-      -  When electrons emitted, energy depends on frequency, not amplitude
-      -  Electrons emitted immediately if light above threshold frequency
+Antineutrino - B- - carries some energy + momentum
 
 
-Electron:
-- wave: diffraction pattern - e- beam hits thin graphite sheet - strikes flourescent screen, produces circle pattern - Proves waves because:
-  - Particle would only produce a circle of light
-  - electron must've diffracted - pass through spaces between atoms of crystals, proving wave
 
-- particle: deflected in electric fields
+### Particles/Quarks
+Cosmic ray - high energy - Pions + Kaons
+Cosmic ray showers - detected with 2 geiger counters
 
+Hadrons - feels SNF, has quarks
+ - Baryon - 3 quarks or 3 anti-quarks - Baryon no. = +1 || anti-baryon = -1
+    - nucleons - p, n || others: Σ etc
+ - Meson - 2 quarks - 1 quark + 1 anti
+    - Pion - π+, π0, π- - exchange particle for SNF 
+    - Kaon - K+, K0, K-, ¯K0 has strangeness / strange quarks
+Lepton - fundamental - use weak force (+ some gravity & EM)
+ - Electron, e- - stable - other leptons decay into electron
+ - Muon, u- - heavy electron - charge of -1
+ - Neutrino - 0 mass, 0 charge - only in weak interactions
+Lepton number - each lepton +1, electron & muon separate (Le & Lu):
+Le - lepton electron no - electron(e-) and neutrino(ve) - +1 and Lu of 0 || anti versions (positron & anti-neutrino) Le = -1
+Lu - lepton muon no. - muon(u-) and muon neutrino (vu) - +1 and Le of 0 || anti (antimuon & muon anti-neutrino) Lu = -1
+
+
+
+## EM Radiation and Quantum Phenomena
 ### Photoelectric Effect
+Photon - EM wave packet (J)
 - free electrons near surface of metal absorb photons, excite out of metal (ionise)
 Threshold frequency - minimum frequency of incident light needed  to release electron - f0 = φ/h
 Work function - minimum energy needed for electron to escape surface - hf > φ || - φ = hf0
-Energy of photon, E = hf, = hc/λ, = φ + KE
+Energy of photon, E = hf, = hc/λ, = φ + KE  (J)
 K.E(max) = hf - φ - extra energy is KE
 - electron below needs to do work/use energy to reach surface
 - graph of K.E(max) against frequency 
@@ -138,8 +166,94 @@ Stopping potential - potential difference needed to stop fastest(max) photoelect
 - KE(max) = eV --> V = KE/e
 De broglie wavelength - λ = h/mv (momentum)
 
+1 eV = 1.60x10-19 J - K.E/work done of electron after accelerated 1 m/s through a p.d of 1V
 
 
+### Energy levels
+Ground state - lowest level - n=1
+- If electron not on ground state, it is excited
+- to excite, must absorb exact energy difference in 2 levels
+Excitation - electron going to higher level - absorb photon or collide with free electron, absorb kinetic energy
+Ionisation - electron gains enough energy to leave atom
+de-excitation - electron falls down to original state - emits photon
+- line at bottom has most negative energy
+- as you go up, energy increases (goes closer to 0)
+Flourescent lamps - contain mercury vapour - high voltage applied, accelerates electrons - collide with mercury & excite & de-excite - emitted UV photon absorbed by phosphorus coating, excites & de-excites again - emit light as lower-energy photons
+
+- each element has unique set of spectral lines
+Line spectra - evidence electrons are particles - in discrete energy
+Emission spectrum - flourescent light into diffraction grating, electron de-excites, emits photon at specific wavelength
+ - provide evidence electrons transition in discrete energy levels
+Absorption spectra - continuous light passes through cold gas - electrons in gas excite, leave black gap - when they de-excite, photon emitted in all directions, doesn't come back
+- Energy levels: change in E = hf = E2 - E1 (lower - higher level)
+  - λ = hc / E2 - E1
+
+### Wave-particle duality
+- all particles display wave & particle properties
+Light: 
+-  wave: diffraction (interference pattern)
+-  particle: photoelectric effect  - for given metal, no photoelectrons emitted below radiation threshold frequency, no matter intensity
+      -  When electrons emitted, energy depends on frequency, not amplitude
+      -  Electrons emitted immediately if light above threshold frequency
+
+Electron:
+- wave: diffraction pattern - e- beam hits thin graphite sheet - strikes flourescent screen, produces circle pattern - Proves waves because:
+  - Particle would only produce a circle of light
+  - electron must've diffracted - pass through spaces between atoms of crystals, proving wave
+
+- particle: deflected in electric fields
+
+
+
+## Waves
+Wave speed - c = fλ  - speed = frequency x wavelength
+Displacement, x - distance wave moved up/down from starting point - vector (metres, m)
+Polarisation
+Phase
+Diffraction grating - e- beam hits thin graphite sheet - strikes flourescent screen, produces circle pattern 
+Antinode - point of maximum amplitude on stationary wave
+Node 
+Coherent - same wavelength, frequency, with fixed phase difference
+Constructive interference - 2 waves meet, displacement in same direction - combine amplitudes
+Destructive interference - 2 waves - displacement opposite direction - cancel out
+    - displacement of combined wave = sum of individual displacements
+Diffraction - wave spreads as passes through a gap/around obstacle
+Cycle - one full oscillation of wave
+In phase - phase difference of 0 or multiple of 360/2π rad
+Out of phase - 2 points on wave - odd multiple of 180/π rad
+Frequency - no. of whole waves passing a point per second (Hz) - f = 1/T 
+Period, T - 
+
+Frequency of first harmonic formula: f = 1/2L √T/u 
+ - for nth harmonic - multiply by n -  n (f = 1/2L √T/u)
+- T = Tension, mg
+- u = mass per unit length
+- L = length of vibrating string
+1st harmonic - stationary wave at lowest resonant freq. - 1 loop - NAN
+
+### Single-slit
+
+### Double-slit
+w = λD / s
+w - fringe width (m)
+λ - wavelength (m)
+D - distance from screen (m)
+s - slit separation (m)
+
+
+### Diffraction grating
+
+### Refraction
+Angle of incidence(i), 01 - incoming light angle with normal
+Angle of refraction(r), 02 - angle of refracted light with normal
+Critical angle - 0c - incidence angle when 02 = 90, || sin 0c = n2/n1 - where n1>n2 (more dense into less dense)
+
+
+## MECHANICS
+Equilibrium - all forces balanced, resultant force = 0 AND resultant moment = 0 - no turning force
+Free-body diagram - shows all forces on object, but not rest of world
+Moment - turnning effect of force on a point
+Couple - 2 moments equal size, acting parallel - in opposite directions
 
 ### Time graphs
 ##### Distance-time graphs:
@@ -154,8 +268,6 @@ negative gradient = decelerating (constant)
 Gradient = acceleration
 Distance = area under graph
 ##### Acceleration
-
-
 
 
 

@@ -1,5 +1,20 @@
 # Pure Maths
-### Differentiation
+## Problem solving
+Ask:
+1) Have i seen similar question before
+2) What do i know - list
+        - what can i do with this info
+3) Can i use a diagram
+4) What exactly am i trying to find
+
+Limits - value of ∞th term in sequence
+Discriminant - b2 - 4ac > 0 = 2 roots
+        - b2 - 4ac = 0 - 1 real root
+        - b2 - 4ac < 0 - no roots
+Expression - algebra - no equals sign
+
+
+## Differentiation
 derivative - result from differentiating something
 f'(x) = d/dx (xⁿ) = **nxⁿ-¹** ---> just power as coefficient, then power - 1 as power
  - f(x) = x³, f'(x) = 3x²
@@ -23,7 +38,7 @@ to find tangents/normals:
 3) write in form y - y₁ = m(x - x1) || y = mx + c
 
 Differentiating from first principles: 
-f'(x) = lim ( f(x+h) - f(x) / h )
+f'(x) = lim ((  f(x+h) - f(x) / h  ))
 - find f'(x) and simplify - remove h from denominator
 - set h=0 and simplify 
 
@@ -40,7 +55,7 @@ Stationary points - points on graph where curve flattens/gradient is 0
 - if f'(x) < 0 || gradient - negative || function decreasing
 - bigger the gradient = quicker y changes as x changes (steeper)
 
-### Curve sketching with differentiation
+#### Curve sketching with differentiation
 1) find where curve crosses axis 
     - y-axis - x = 0
     - x-axis - f(x) = 0 (2 roots)
@@ -48,6 +63,15 @@ Stationary points - points on graph where curve flattens/gradient is 0
 3) When x gets Big, factorise to take out highest power of x from every term
 
 - Differentiation is used to find rates of change
+
+#### Differentiated graphs:
+1) If f(x) negative gradient --> f'(x) below x-axis || If positive gradient -- f'(x) above x-axis
+2) Minimum & Maximums ---> roots of f'(x)
+3) POI, inflection ---> min/max points of f'(x)
+        - If gradient negative = MIN
+        - if gradient positive = MAX
+4) If f(x) odd ---> f'(x) even || if even ---> f'(x) odd
+- f'(x) graph usually has 1 less turn than original
 
 #### Differentiation Trig functions:
 
@@ -63,7 +87,7 @@ Stationary points - points on graph where curve flattens/gradient is 0
 
 6. f(x) = csc x | f′(x) = −csc x cot x
 
-### Integration
+## Integration
 
 - 'opposite' of differentiation
 constant of integration - 'C' - multiple right answers, represents any number 
@@ -93,7 +117,12 @@ to find 1 of limits:
 1) integrate normally
 2) substitute variable, use formula : top - bottom = answer
 
-
+## Trig
+Sine rule - sin A / a = Sin B / b - for 2 angles + 1 side
+Cosine rule - a2 = b2 + c2 - 2bc cos(A)
+        - cos(A) = b2 + c2 - a2 / 2bc
+tan x = sin x / cos x
+sin2x + cos2x = 1
 
 
 
