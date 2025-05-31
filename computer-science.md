@@ -54,12 +54,16 @@ Harvard:
 - programs usually large
 
 ##### CISC VS RISC
-CISC - Complex instruction - large instruction set - Single instruction doing loading,operation,storing
+CISC - Complex - one single instruction - load/store operation - large instruction set - more transistors, less RAM/memory 
+RISC - Reduced - Simple, small instruction set - 1 clock cycle per instruction - faster, larger - more memory
+
+CISC - Complex - large instruction set - Single instruction doing loading,operation,storing
 - used more in microcontrollers, embedded systems
 - Adv:
   - compiler low work to translate high-level language to machine code - code shorter, little RAM required to store
 - Dis:
-  - many specialised instructions built into hardware, but only some (20%) used in average program
+  - only (20%) of specialised instructions built into hardware used in average program
+  - slower, more transistors - as more complex
 
 RISC - Reduced Instruction - small instruction set 
 - each instruction 1 line of machine code, takes 1 clock cycle
@@ -67,14 +71,36 @@ RISC - Reduced Instruction - small instruction set
   - pipelining possible - each instruction takes same amount of time
   - faster - execute at least as fast as single CISC instruction
 - Dis:
-  - compiler has to do more work to translate high-level code
-  - more RAM needed to store machine code instructions
+  - compiler more work to translate high-level code
+  - more RAM to store longer machine code
 
 Co-processor - extra processor to supplement functions of cpu - limited functions
 GPU - co-processor - independent processors in parallel - very efficient at image processing, machine learning
 
 Multi-core - multiple independent cores - distribute workload - higher performance
 parallel - single core, use threading
+
+## System software
+
+OS - manages operations of computer - links user to PC
+loader - in ROM - instructions to load OS - copy from storage to RAM
+
+Paging - memory held in pages - each 4KB
+Page table - maps link between physical (RAM) & virtual (logical) memory address space
+Segmentation - logical division of address space into different lengths
+Virtual memory - extra disk storage when RAM is full - move from RAM and back
+Interrupt - signal from software/device/clock to CPU
+ISR - Internet Service Routine - fixes interrupts - specific routines
+Scheduler - module, managing processor time - multi-task instructions
+
+### Input 
+### Output Devices
+
+Barcodes - lines/blanks = 1/0 - 2D barcoder = QR
+Inkjet printer - small, inexpensive - 10 diff colours max - Dis: ink smears
+Laser printer - toner, fast, reliable, good quality - for fliers
+Dot matrix - multi-port stationary uses - expensive, noisy, poor quality
+
 
 ## Databases
 Lossy compression - remove unneeded info - less file size, worse quality
@@ -98,7 +124,7 @@ composite primary key - primary key with multiple attributes
 
 referential integrity - when tables linked, attribute not deleted from one table
 
-relational database - collection of tables - shared attributes
+relational database - collection of tables - shared attributes - each entity has own table, linked by keys
 Normalisation - process for best possible design for database
  - no data duplicated
  - data consistent - automatic consequence of no duplicates
@@ -112,6 +138,12 @@ Normalisation - process for best possible design for database
   - no data redundancy
   - easy maintain & change
   - faster sorting/searching 
+
+ACID - Atomicity - all changes as if single operation - all done or none done
+- Consistency: automatic consequence of atomicity
+- Isolation - other transactions invisible to other transactions - independent
+- Durability - changes not undone
+
 
 ## OOP
 - works best in situations where you can encapsulate and model entities as objects.
@@ -222,7 +254,18 @@ SMTP - Simple Mail transfer - transfer outgoing emais from one server to another
 ### Security & Threats
 
 
-## Binary
+## Data Types
+Primitive data type - built into a programming language - integer,float,string,boolean,character
+
+### Binary
+To represent negative numbers:
+Sign & magnitude:
+- Leftmost bit = MSB - sign bit
+- if MSB is 0 = positive
+- MSB is 1 = negative 
+- Can only represent from -127 <-> 127 as last bit is sign bit (255 total)
+
+
 Twos complement:
 - MSB is negative, subtract rest from that number to get number
 - To convert: 1) Write number as positive
@@ -233,11 +276,52 @@ Twos complement:
 
 Fractions:
 - fractional values are negative powers of 2, e.g 2^-2 = 0.25
-- Floating point binary value: 
-- size of number increases as accuracy decreases, decimal point somewhere on byte
-  - less size = better accuracy , more size = less accuracy
-- Mantissa = number itself
-- Exponent = position of binary point in number
+
+Fixed point binary:
+- fixed point to separate whole from fractional digits
+- Limited range & accuracy - cant do big numbers
+- less size = better accuracy , more size = less accuracy
+
+Floating point binary:
+- decimal point somewhere on byte
+- Standard form/scientific notation - m x 10^n || m = mantissa, n = exponent
+- Mantissa - m - number itself - all 8 bits, sign bit + binary
+- Exponent - n - position of binary point in number - in two's complement form
+  
+- FIRST BIT = MSB = SIGN BIT
+- next 7 bits = mantissa + sign bit
+- last 4 bits = exponents (usually, will specify amount)
+
+To convert to denary:
+- Translate exponent to denary - move binary point (from sign bit) that amount to right - if exponent negative, move to left
+- Write out mantissa with new binary point - remove exponent
+- Convert new number to denary with decimal point
+
+Normalisation - find max level of precision for a given number of bits - basically put in it standard form
+- a positive number has sign bit of 0, next digit is 1 - 0.1
+- negative = sign bit of 1, next digit is 0 - 1.0
+
+- move mantissa until it is 0.1/1.0 if positive/negative
+- how ever many digits mantissa has moved, subtract this from exponent
+
+Floating point addition/subtraction:
+- make exponents equal - to line up mantissa
+- add/subtract mantissa
+- normalise result
+
+
+Shifting - logical - ignore sign bit
+         - arithmetic - keep sign bit
+Masks - apply boolean expression(AND,OR) to bit to check it
+
+
+## Data structures
+
+Array - fixed - static - same data type
+Record - different data types - has fields(attributes)
+Tuple - static - ordered, any data type
+List - dynamic - ordered
+
 
 ### Abstract data types
 1) Queue
@@ -278,7 +362,7 @@ Rules:
 - Some terms above others - ignore lower order terms
 - We always use WORST CASE so we take the slowest runtime terms -- O(n!) will be taken above any
 
-#  - O(1) < O(logn) < O(n) < O(n log n) < O(n^2) < O(2^n) < O(n!)
+**- O(1) < O(logn) < O(n) < O(n log n) < O(n^2) < O(2^n) < O(n!)**
   fastest ------> slowest
   low order ----> high order
   
@@ -295,6 +379,9 @@ Types of measurements:
 
 
 # GCSE
+
+
+
 ## Paper 1 - Computer Systems
 
 ### Components of a Computer System
@@ -945,3 +1032,16 @@ IDE(Integrated Development Environment) - software with features that help progr
         - Each pixel value represents a different colour, using one bit per pixel
         - Larger image resolution, quality and higher colour depth will increase file size
         - Metadata - data/information about an image - date, author, resolution, file size
+
+
+
+
+
+
+# Random Terms
+
+Recursion - 1) Base case/stop condition 
+- 2) call within itself
+- 3) a finite loop
+
+
