@@ -213,12 +213,12 @@ Circuit switching - direct link between 2 devices for duration of communication 
   - can only connect devices on same transfer rate
 Packet switching - each packet has own route, switching at every router
 
-Explain what is meant by 'packet switching' [3]:
+Explain what is meant by 'packet switching' [3/4]:
 - ** Message is split into packets/chunks (1)
-- Each packet is given destination and source IP address 
+- Each packet is given destination and source IP address (1)
 - Each packet dispatched to Internet through router/gateway 
 - Packets sent independently, given a sequence number
-- routers forward packets towards destination node
+- routers forward packets towards destination node    
 - path of transfer determined by routers
 - ** Packets reassembled at destination node, in order (1)
 
