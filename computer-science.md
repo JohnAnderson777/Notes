@@ -36,7 +36,7 @@ MDR(Memory data register) - temporarily store data read/written to memory - aka 
 Cache - level 1 - really fast, small storage (2-64 KB)
       - level 2 - less fast, medium storage (256kb- 2MB)
 
-#### Neumann vs Harvard architecture
+### Neumann vs Harvard architecture
 Neumann:
 - same data bus used to transfer both data & instructions
 - single address bus used to transfer addresses of data&instructions
@@ -45,15 +45,15 @@ Neumann:
 - Programs optimised in size
 
 Harvard:
-- separate memories for data & instructions - different characteristics (e.g read-only vs read-write)
-  - prevents resource conflicts - faster execution - needed for real-time applications
-- sometimes - more instruction memory than data memory - larger word size used for instructions
+- separate memory for data & instructions - different characteristics (e.g read-only vs read-write)
+- separate, parallel buses (data, address) for I & D
+  - prevents conflicts - faster execution - needed for real-time applications
+- if more instruction memory than data memory - larger word size for instructions
 - instruction address bus wider than data bus
-- parallel data & instruction buses used
 - used in DSP - digital signal processing - + Embedded systems
 - programs usually large
 
-##### CISC VS RISC
+### CISC VS RISC
 CISC - Complex - one single instruction - load/store operation - large instruction set - more transistors, less RAM/memory 
 RISC - Reduced - Simple, small instruction set - 1 clock cycle per instruction - faster, larger - more memory
 
@@ -80,10 +80,24 @@ GPU - co-processor - independent processors in parallel - very efficient at imag
 Multi-core - multiple independent cores - distribute workload - higher performance
 parallel - single core, use threading
 
+**Questions**:
+Describe Harvard architecture[2]:
+- separate memory blocks for instructions & data
+- separate buses (data, address) for I & D
+- fixed memory sizes for I & D
+- instruction memory may be ROM
+
+Why Harvard suitable for embedded system:
+- Fixed instruction size
+- no need for memory shared between D & I
+- no need for secondary storage
+- Instructions never changed
+
 ## System software
 
 OS - manages operations of computer - links user to PC
 loader - in ROM - instructions to load OS - copy from storage to RAM
+BIOS - boots up OS - Stored in ROM - tests hardware working 
 
 Paging - memory held in pages - each 4KB
 Page table - maps link between physical (RAM) & virtual (logical) memory address space
@@ -93,14 +107,23 @@ Interrupt - signal from software/device/clock to CPU
 ISR - Internet Service Routine - fixes interrupts - specific routines
 Scheduler - module, managing processor time - multi-task instructions
 
-### Input 
-### Output Devices
+#### Input 
+#### Output Devices
 
 Barcodes - lines/blanks = 1/0 - 2D barcoder = QR
 Inkjet printer - small, inexpensive - 10 diff colours max - Dis: ink smears
 Laser printer - toner, fast, reliable, good quality - for fliers
 Dot matrix - multi-port stationary uses - expensive, noisy, poor quality
 
+**Questions**:
+Difference between global vs local variable[2]:
+- Global - visible & accessible anywhere in program
+- Local - only visible in module it is created in
+
+Difference between paging & segmentation[2]:
+- Paging - physical addressing || segmentation - logical addressing
+- Paging - fixed size memory blocks || segmentation - variable length memory blocks
+- 
 
 ## Databases
 Lossy compression - remove unneeded info - less file size, worse quality
@@ -144,7 +167,16 @@ ACID - Atomicity - all changes as if single operation - all done or none done
 - Isolation - other transactions invisible to other transactions - independent
 - Durability - changes not undone
 
+**Questions:**
 
+Difference between primary key & foreign key [2]:
+- primary - unique identifier - only appear once in table
+- foreign - not unique - appears multiple times in a table 
+
+Benefits of relational instead of flat file [2/3]:
+- less data redundancy 
+- more consistency
+- allow for complex queries and searches performed
 ## OOP
 - works best in situations where you can encapsulate and model entities as objects.
 - useful for GUIs
@@ -254,6 +286,15 @@ SMTP - Simple Mail transfer - transfer outgoing emais from one server to another
 ### Security & Threats
 
 
+### Web Technologies
+
+**Questions**:
+Advantage of CSS external file than embedded in HTML[3]:
+- Content and formatting separate 
+- changes made to external sheet & affect whole site - save time - ensure consistency
+
+
+
 ## Data Types
 Primitive data type - built into a programming language - integer,float,string,boolean,character
 
@@ -314,16 +355,27 @@ Shifting - logical - ignore sign bit
          - arithmetic - keep sign bit
 Masks - apply boolean expression(AND,OR) to bit to check it
 
+**Questions**:
+Hexadecimal rather than binary [2/3]:
+- shorter as 4 bits can be represented by 1 hex character
+- faster / more reliable to communicate (write & read)
 
-## Data structures
+Character set [2]:
+- mapping of characters that can be understood by computer
+- each character unique binary code, stored instead of character
+
+
+## Data Structures
+Static - Size is fixed when created - size cannot change during processing
+Dynamic - Size can change during processing
+ - Dis: Storage required initially unknown - harder to program
 
 Array - fixed - static - same data type
 Record - different data types - has fields(attributes)
 Tuple - static - ordered, any data type
 List - dynamic - ordered
 
-
-### Abstract data types
+### Abstract Data Types
 1) Queue
 2) Stack
 3) Linked list
@@ -350,7 +402,7 @@ Call stack - system data structure
     - address which execution returns after end of subroutine is reached is saved onto stack
     - Execution transferred to subroutine code
 
-## Big O notation - O(n)
+### Big O notation - O(n)
 - simplified analysis of an algorithm's efficiency - finds runtime and space
 - finds complexity in terms of input size, N
 - machine-independent
@@ -375,7 +427,18 @@ Types of measurements:
 - Best Case
 - Average Case
 
+**Questions**:
+Array can store & access data in stack[4]:
+- Stack pointer points to last element added/top of stack
+- New data added to pointer position / removed from position
+- check for overflow / underflow
+- pointer incremented / decremented
+- Elements accessed through Push() and Pop() methods
 
+Stack used when handling interrupts:
+- Stack uses LIFO storage
+- as processes halted, pushed onto stack
+- when returned popped from top of stack, in correct order
 
 
 # GCSE
@@ -1040,7 +1103,8 @@ IDE(Integrated Development Environment) - software with features that help progr
 
 # Random Terms
 
-Recursion - 1) Base case/stop condition 
+Recursion - A function calls itself within the function
+- 1) Base case/stop condition 
 - 2) call within itself
 - 3) a finite loop
 
