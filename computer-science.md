@@ -177,15 +177,7 @@ Benefits of relational instead of flat file [2/3]:
 - less data redundancy 
 - more consistency
 - allow for complex queries and searches performed
-## OOP
-- works best in situations where you can encapsulate and model entities as objects.
-- useful for GUIs
-- computer games are a good example of the use of OOP - characters,players, items, enemies etc with methods
-- Advantages:
-  1. Code reuse - can use in other programs - faster program development
-  2. encapsulation reduces complexity - can hide methods & attributes from user
-  3. Maintenance easier - can troubleshoot and modify program easier
-  4. Reinforces security
+
 
 ## Networks
 ### Internet
@@ -402,7 +394,132 @@ Call stack - system data structure
     - address which execution returns after end of subroutine is reached is saved onto stack
     - Execution transferred to subroutine code
 
-### Big O notation - O(n)
+
+**Questions**:
+Array can store & access data in stack[4]:
+- Stack pointer points to last element added/top of stack
+- New data added to pointer position / removed from position
+- check for overflow / underflow
+- pointer incremented / decremented
+- Elements accessed through Push() and Pop() methods
+
+Stack used when handling interrupts:
+- Stack uses LIFO storage
+- as processes halted, pushed onto stack
+- when returned popped from top of stack, in correct order
+
+## PAPER 2
+
+### Programming Techniques
+Algorithm - set of instructions specifying how to solve a problem - input, processing, output
+Comments - // - explain program
+Data type - integer, float, boolean, character, string
+round() - round(number, d.p)
+Exponent - ** - 2**5 = 2^5
+Integer division - div - whole number answer - //
+Modulo div - mod - remainder - %
+String.find(str) - returns index if found, -1 if not
+date(year, month, day) - returns data you can calculate with
+Variable - identifiers given to memory locations - change during processing
+Constant - identifier - value never changes during processing
+  - Adv: in long program - no chance of accidentally changing/using value
+
+#### Sequence, Selection, Iteration
+Sequence - 2+ statements executed one after the other
+Selection - selects which statement to be executed based on a condition
+Switch/case - nested if - choice between several alternatives
+NOT (a < b) =  a >= b
+Iteration - a loop to repeat statements
+While loop - 2 properties: 1) expression condition controlling loop must be BOOLEAN
+  - 2) Expression tested at start of loop
+Repeat-until - 'until' condition at end of loop
+for-next - exact number of loops - increments each time
+
+#### Subroutines, Recursion
+Subroutine - named block of code, performs a specific task in a program
+Function - returns a value to a variable - any normal function
+Procedure - calls by its name - doesn't return value - e.g print(), sum()
+
+Pass by value - actual value is passed to subroutine, treated as local variable
+  - changing parameter inside subroutine wont affect value outside
+    - all parameters passed by value in python
+
+Pass by reference - ADDRESS of parameter passed to subroutine 
+  - changing inside subroutine will change it outside - as they refer to same memory location
+
+Global variables - visible & accessible anywhere in program
+Local variables - only visible in subroutine/module it was created in
+Encapsulation - subroutines fully independent to rest of program
+Modular programming - breaking down long, complex program into many subtasks/routines
+
+Subroutine Advantages:
+1) understand as a unit of code - easy to understand, debug, maintain
+2) Tested independently - shorten time to get large program working
+3) reuseable in different parts or programs
+4) modular approach - multiple programmers work on program at once - focus on different subroutines - efficient
+5) easier to monitor and control
+  
+Recursion - subroutine calls itself within its subroutine:
+- 1) base case / stop condition - routine stops calling itself
+- 2) Routine must call itself - for input values other than stop condition
+- 3) stopping condition reached after finite number of calls
+
+Call stack - each time routine called, return address, parameters, local variables - held in stack frame
+  - popped from stack at end of routine
+
+#### IDE
+Integrated Development Environment
+Features:
+1) Line numbers
+2) Code editor
+3) Translator (Compiler/Interpreter)
+4) debugging - syntax errors
+
+Tools:
+1) breakpoint - program stops on that line
+2) watch - value displayed each time variable changes
+3) step through program line at a time
+
+#### OOP
+Object - world viewed as collection of objects -- person, animal, place, stack etc.
+- Attribute - details of object -- name, lastname, DoB etc.
+- state - each object has its state -- what/where it is right now 
+- behaviours - actions performed by object -- walk etc.
+
+Class - blueprint/template for an object - defines attributes & behaviours (methods)
+Method - functionality of class - something it can do, or can be done with
+Information hiding - instance variables/attributes declared private - methods public - can use methods in other classes
+  - class cannot directly access attributes of another class
+
+Constructor - name used to create objects in a class - usually 'new'
+Instantiation - creating a new object(instance) - values of attributes unique to each instance
+Layout: \\ creating a new stock item called 'book1'
+- book1 = new StockItem("PT123", "Book", "Computer Science", 35)
+Variable reference diagram - shows new object referenced by variable created
+  - reference variables = circle, primitive data types = rectangle
+
+Messages - getter/setter - getter = functions (return answer), setter = procedures (change object)
+Encapsulation - object encapsulates state and behaviours/methods - independent
+  - in large program - people can work on different classes, not affect rest of system
+  - use methods from other classes not knowing how they work
+Inheritance - child classes (subclasses) inherit data, behaviour from parent class(superclass)
+- 'is (Object A) a (Object B)' rule - find when inheritance is appropriate
+Polymorphism - process objects differently depending on class
+ - overriding - defining method with same name + argument types as an inherited method from superclass
+
+- works best in situations where you can encapsulate and model entities as objects.
+- useful for GUIs
+- computer games - good example use of OOP - characters,players, items, enemies etc with methods
+- Advantages:
+  1. Code reuse - can use in other programs - faster program development
+  2. encapsulation reduces complexity - can hide methods & attributes from user
+  3. Maintenance easier - can troubleshoot and modify program easier
+  4. Reinforces security
+
+
+### Algorithms
+Functions
+#### Big O notation - O(n)
 - simplified analysis of an algorithm's efficiency - finds runtime and space
 - finds complexity in terms of input size, N
 - machine-independent
@@ -427,18 +544,15 @@ Types of measurements:
 - Best Case
 - Average Case
 
-**Questions**:
-Array can store & access data in stack[4]:
-- Stack pointer points to last element added/top of stack
-- New data added to pointer position / removed from position
-- check for overflow / underflow
-- pointer incremented / decremented
-- Elements accessed through Push() and Pop() methods
+#### Searching
 
-Stack used when handling interrupts:
-- Stack uses LIFO storage
-- as processes halted, pushed onto stack
-- when returned popped from top of stack, in correct order
+#### Sorting
+
+#### Graph traversal
+
+#### Dijkstra Algorithm - Shortest Path
+
+
 
 
 # GCSE
@@ -1103,9 +1217,5 @@ IDE(Integrated Development Environment) - software with features that help progr
 
 # Random Terms
 
-Recursion - A function calls itself within the function
-- 1) Base case/stop condition 
-- 2) call within itself
-- 3) a finite loop
 
 
