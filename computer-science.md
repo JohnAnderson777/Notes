@@ -518,7 +518,13 @@ Polymorphism - process objects differently depending on class
 
 
 ### Algorithms
-Functions
+Functions - maps one set of values to another
+- linear function = ax + c
+- polynomial - ax^m + bx + c
+- exponential - ab^x
+- logarithmic - a logn x
+
+Permutations - number of ways of arranging objects - factorial, x!
 #### Big O notation - O(n)
 - simplified analysis of an algorithm's efficiency - finds runtime and space
 - finds complexity in terms of input size, N
@@ -538,6 +544,10 @@ Rules:
 - O(1) = constant time - fastest (best) case
 - O(n) = linear time - N * O(1)
 - O(n^2) = quadratic time - N * O(n)
+    - 2 nested loops
+- O(2^n) = Exponential time 
+- O(log n) = logarithmic time 
+    - binary search = O(log2 n)
 
 Types of measurements:
 - Worst Case (usual)
@@ -545,6 +555,8 @@ Types of measurements:
 - Average Case
 
 #### Searching
+
+Linear search - 
 
 #### Sorting
 
