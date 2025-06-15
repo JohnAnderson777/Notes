@@ -556,9 +556,85 @@ Types of measurements:
 
 #### Searching
 
-Linear search - 
+Linear search - unordered - items searched one-by-one until requird item found/end list reached
+- time complexity for linear search = O(n)
+- Psuedocode for linear:
+      function linearSearch(list, itemSought):
+        i = 0
+        while i < length(list):
+          if list[i] == itemSought then:
+            return i
+          i += 1
+        return -1
+
+Binary Search - ordered - dividing list in half that could have required item
+- time complexity = O(log n)
+- Pseudocode:
+      function binarySearch(list, itemSought):
+          first = 0
+          last = len(list) - 1
+            while first <= last:
+            middle = (first + last) / 2
+            if list[middle] = itemSought:
+              return middle
+            else if list[middle] < itemSought:
+              first = middle + 1
+            else:
+              last = middle - 1
+          return -1
+
+- OR WITH RECURSION:
+      function binarySearc(list, itemSought, first, last):
+        if last < first:
+          return -1
+        else:
+          middle = first+last / 2
+          if list[middle] > itemSought:
+            return binarySearch(list, ItemSought, first, midpoint-1)
+          if list[middle] < itemSought:
+            return binarySearch(list, ItemSought, midpoint+1, last)
+          else:
+            return middle  
 
 #### Sorting
+
+Bubble sort - compare each item with one next to it - if greater, swap
+    - last element will be correct after first pass
+    - repeats n-2 times
+- time complexity = O(n^2)
+- Psuedocode (flag for no unneccessary passes):
+     <c numbers list [1,2,3,4,5 etc] >
+      numItems = len(numbers)
+      flag = True
+      while i < (numItems - 1) AND flag = True:
+        flag = False
+        for j = 0 to numItems - i - 2:
+          if numbers[j] > numbers[j+1]:
+    <c  swap >
+          temp = numbers[j]
+          numbers[j] = numbers[j+1]
+          numbers[j+1] = temp
+          flag = True
+        j +=1
+      i += 1
+      print(numbers)
+
+Insertion - takes one item at a time, places in correct location
+- more efficient than bubble
+- time complexity = O(n^2)  --  if nearly sorted, close to O(n)
+- Psuedocode:
+      procedure insertionSort(list):
+      n = len(list)
+      for i = 1 to n-1:
+        key = list[i]
+        j = i -1
+
+      while j >= 0 AND list[j] > key:
+        list[j+1] = list[j]
+        j -= 1
+      list[j+1] = key
+
+
 
 #### Graph traversal
 
