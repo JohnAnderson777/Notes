@@ -532,6 +532,8 @@ Permutations - number of ways of arranging objects - factorial, x!
 - basic computer steps
 - time & space
 
+Space complexity - amount of memory an algorithm uses - efficiency
+
 Rules:
 - ignores constants || 5n --> O(n)
 - Some terms above others - ignore lower order terms
@@ -574,17 +576,17 @@ Binary Search - ordered - dividing list in half that could have required item
           first = 0
           last = len(list) - 1
             while first <= last:
-            middle = (first + last) / 2
-            if list[middle] = itemSought:
-              return middle
-            else if list[middle] < itemSought:
-              first = middle + 1
-            else:
-              last = middle - 1
+              middle = (first + last) / 2
+              if list[middle] = itemSought:
+                return middle
+              else if list[middle] < itemSought:
+                first = middle + 1
+              else:
+                last = middle - 1
           return -1
 
 - OR WITH RECURSION:
-      function binarySearc(list, itemSought, first, last):
+      function binarySearch(list, itemSought, first, last):
         if last < first:
           return -1
         else:
@@ -627,16 +629,47 @@ Insertion - takes one item at a time, places in correct location
       n = len(list)
       for i = 1 to n-1:
         key = list[i]
-        j = i -1
+        j = i - 1
 
       while j >= 0 AND list[j] > key:
         list[j+1] = list[j]
         j -= 1
       list[j+1] = key
 
+Merge Sort - divide & conquer - divides until sublists are 1 item, merged and sorted into single list
+- time complexity = O(n log n)
+- Psuedocode:
+        mergesort(list)
+        if len(list) > 1:
+          mid = len(list) //(div) 2
+          lefthalf = list[:mid]
+          righthalf = list[mid:]
 
+        mergesort(lefthalf)
+        mergesort(righthalf)
+
+
+Quick Sort - select value - pivot value(usually 1st item) - at split point:
+  - all values < pivot in first section
+  - all values > pivot in second section
+  - recursively repeat process for all sections until sorted
+- split point - actual position of pivot value in sorted list - point where list is split
+- time complexity = O(n log n)
+- Advantages: extremely fast - Doesn't need additional memory (like merge sort)
+- Dis: if split point not near middle of list, takes longer
+      - if list large, recursion cause stack overflow - crash
 
 #### Graph traversal
+Depth-first - stack - go as far down one route, backtrack & take next route
+- Uses:
+  - scheduling jobs
+  - mazes
+Breadth-first - queue - visit all nodes connecting to A, then move to B
+- Uses:
+  - shortest path algorithm (Dijkstra)
+  - Facebook - friends links
+  - Web crawlers
+
 
 #### Dijkstra Algorithm - Shortest Path
 
@@ -1304,6 +1337,5 @@ IDE(Integrated Development Environment) - software with features that help progr
 
 
 # Random Terms
-
 
 
