@@ -673,6 +673,21 @@ Breadth-first - queue - visit all nodes connecting to A, then move to B
 
 #### Dijkstra Algorithm - Shortest Path
 
+#### Abstraction
+Representational abstraction - representation arrived at by removing unnecessary details
+Uses:
+- any computer model, new car, flight simulator
+- maps
+data abst - how data actually represented hidden - abstract data types
+
+- make sure function never crashes - test for an empty list OR precondition
+Precondition advantages - user knows what checks before subroutine
+- if no preconditions - checks in subroutine - less code
+- reusable
+
+Procedural abstraction - using procedure to carry out an algorithm - sequence of steps for completing a task
+procedure interface - necessary info seen by user
+
 
 
 
