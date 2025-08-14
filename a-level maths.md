@@ -1,5 +1,6 @@
-# Pure Maths
-## Problem solving
+# YEAR 1 - AS
+## Pure Maths
+### Problem solving
 Ask:
 1) Have i seen similar question before
 2) What do i know - list
@@ -14,7 +15,7 @@ Discriminant - b2 - 4ac > 0 = 2 roots
 Expression - algebra - no equals sign
 
 
-## Differentiation
+### Differentiation
 derivative - result from differentiating something
 f'(x) = d/dx (xⁿ) = **nxⁿ-¹** ---> just power as coefficient, then power - 1 as power
  - f(x) = x³, f'(x) = 3x²
@@ -87,7 +88,7 @@ Stationary points - points on graph where curve flattens/gradient is 0
 
 6. f(x) = csc x | f′(x) = −csc x cot x
 
-## Integration
+### Integration
 
 - 'opposite' of differentiation
 constant of integration - 'C' - multiple right answers, represents any number 
@@ -117,7 +118,7 @@ to find 1 of limits:
 1) integrate normally
 2) substitute variable, use formula : top - bottom = answer
 
-## Trig
+### Trig
 Sine rule - sin A / a = Sin B / b - for 2 angles + 1 side
 Cosine rule - a2 = b2 + c2 - 2bc cos(A)
         - cos(A) = b2 + c2 - a2 / 2bc
@@ -133,7 +134,7 @@ sin2x + cos2x = 1
 
 
 
-# Statistics
+## Statistics
 central tendency - mean, median, mode - centre of data
 median - if even = avg of n/2, n/2 + 1
         - if odd = m/2
@@ -236,7 +237,29 @@ Formula: P(X = x) = (n x) * p^x * (1 - p)^n-x  || X ~ B(n, p)
  - p = probability of 'success'
  - x = number of 'successes'
 
-## Year 2 - A level
+
+# YEAR 2
+
+## Pure
+### Differentiation
+
+sin kx  -->  k cos   kx   
+cos kx  --> -k sin   kx
+tan kx  -->  k sec^2 kx
+
+cot kx   -->  -k cosec^2 kx
+sec kx   -->   k sec kx tan kx
+cosec kx -->  -k cosec kx cot kx
+
+Sin = cos
+cos = -sin
+tan = sec^2
+sec = sec tan
+cot = -cosec^2
+cosec = -cosec cot
+
+## Statistics
+
 ### Normal distribution - 'bell shaped'
 - continuous
 - total area always same (1) | total area under graph = 1
@@ -271,4 +294,5 @@ P(X < b) --> P(Y < b-0.5)
 P(X >= b) --> P(Y > b-0.5)
 P(X > b) --> P(Y > b+0.5)
  
-- works if np and n(1 - p) both > 5 
+- works if np and n(1 - p) both > 5
+
