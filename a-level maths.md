@@ -296,3 +296,5 @@ P(X > b) --> P(Y > b+0.5)
  
 - works if np and n(1 - p) both > 5
 
+
+.
