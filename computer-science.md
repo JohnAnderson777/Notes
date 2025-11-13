@@ -38,15 +38,15 @@ Cache - level 1 - really fast, small storage (2-64 KB)
 
 ### Neumann vs Harvard architecture
 Neumann:
-- same data bus used to transfer both data & instructions
-- single address bus used to transfer addresses of data&instructions
-  - same word length used for all memory
-- used in PCs, servers, embedded system with control functions
+- same data bus to transfer both data & instructions
+- single address bus to transfer addresses of data&instructions
+  - same word length for all memory
+- in PCs, servers, embedded system with control functions
 - Programs optimised in size
 
 Harvard:
 - separate memory for data & instructions - different characteristics (e.g read-only vs read-write)
-- separate, parallel buses (data, address) for I & D
+- separate, parallel buses (data, address) for D & I
   - prevents conflicts - faster execution - needed for real-time applications
 - if more instruction memory than data memory - larger word size for instructions
 - instruction address bus wider than data bus
@@ -123,7 +123,7 @@ Difference between global vs local variable[2]:
 Difference between paging & segmentation[2]:
 - Paging - physical addressing || segmentation - logical addressing
 - Paging - fixed size memory blocks || segmentation - variable length memory blocks
-- 
+
 
 ## Databases
 Lossy compression - remove unneeded info - less file size, worse quality
@@ -407,6 +407,39 @@ Stack used when handling interrupts:
 - Stack uses LIFO storage
 - as processes halted, pushed onto stack
 - when returned popped from top of stack, in correct order
+
+
+## Computational Thinking
+
+### Legislation
+1) Data Protection Act - 1998 - protects personal data, stored&used:
+   - permission for collecting data
+   - keep data secure
+   - data deleted when not needed
+2) Computer Misuse Act - 1990 - hacking/cybercrime illegal:
+   - unauthorised access to data
+   - planting malware
+   - creating/selling hack tools
+3) Copyright, Designs & Patents Act - 1988 - protect creative work/software:
+   - piracy
+   - copying media
+   - distributing without permission
+4) RIPA - Regulation of Investigatory Powers Act - 2000 - gov. monitors communications 
+   - (balance law enforcement & privacy) (e.g Whatsapp)
+   - intercept emails
+   - monitor internet use
+   - track calls
+Summary:
+1) DPA - 1998 - personal data: need permission, secure, deleted after
+2) CMA - 1990 - no hacking/cybercrime - malware/hack tools
+3) C,D&PA - 1988 - protect digital content - no pirating, copying, distributing
+4) RIPA - 2000 - gov. surveil communications - controversial
+
+### Thinking Abstractly
+
+### Thinking Ahead
+### Thinking computationally
+
 
 ## PAPER 2
 
