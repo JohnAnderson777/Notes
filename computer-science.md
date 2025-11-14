@@ -2,6 +2,8 @@
 
 # A - Level
 
+## PAPER 1 
+
 ## Computer Components
 Control Unit - controls, coordinates CPU activity - directs flow of data between CPU & devices, decodes instructions, stores resulting data back in memory/registers
 Bus - set a of parallel wires connecting computer components - 8,16,32,64 lines
@@ -162,7 +164,8 @@ Normalisation - process for best possible design for database
   - easy maintain & change
   - faster sorting/searching 
 
-ACID - Atomicity - all changes as if single operation - all done or none done
+ACID - guarantee database transactions processed reliably
+- Atomicity - all changes as if single operation - all done or none done
 - Consistency: automatic consequence of atomicity
 - Isolation - other transactions invisible to other transactions - independent
 - Durability - changes not undone
@@ -408,10 +411,7 @@ Stack used when handling interrupts:
 - as processes halted, pushed onto stack
 - when returned popped from top of stack, in correct order
 
-
-## Computational Thinking
-
-### Legislation
+## Legislation
 1) Data Protection Act - 1998 - protects personal data, stored&used:
    - permission for collecting data
    - keep data secure
@@ -435,13 +435,41 @@ Summary:
 3) C,D&PA - 1988 - protect digital content - no pirating, copying, distributing
 4) RIPA - 2000 - gov. surveil communications - controversial
 
+
+
+## **PAPER 2**
+
+
+## Computational Thinking
 ### Thinking Abstractly
+Computational Thinkikng - to think logically about a problem and apply techniques to solve it
+Abstraction - separating logical & physical aspects of a problem
+- devising a model representing reality
+- removing details irrelevant to problem
+- e.g London underground map, scuba diving map
+- problem abstraction - removing details until problem is one already solved
+- after abstraction - algorithms + data structures designed to solve problem
+- real-world models eg: climate change model predicting temperature, aircraft simulator.
 
 ### Thinking Ahead
+Input --> problem --> Output
+Input - info relevant to problem - e.g parameters passed to subroutine
+Output - solution to problem - passed from subroutine
+When making solution:
+- algorithm correct - works for all possible inputs
+- algorithm efficient - can involve huge data, need quickest algorithm
+Specifying preconditions advantages:
+- program components reusable - save time writing&testing functions - already tested
+- less unnecessary checks
+- easier to debug & maintain - clear + shorter
+Programming standards:
+- inputs, outputs, preconditions documented
+- Variable names conventional
+- variables local to module
+- documentation in standard format - what, who, date
+- explanations of code
+
 ### Thinking computationally
-
-
-## PAPER 2
 
 ### Programming Techniques
 Algorithm - set of instructions specifying how to solve a problem - input, processing, output
