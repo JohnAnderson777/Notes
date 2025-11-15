@@ -2,7 +2,8 @@
 
 # A - Level
 
-## PAPER 1 
+# **PAPER 1**
+
 
 ## Computer Components
 Control Unit - controls, coordinates CPU activity - directs flow of data between CPU & devices, decodes instructions, stores resulting data back in memory/registers
@@ -95,9 +96,31 @@ Why Harvard suitable for embedded system:
 - no need for secondary storage
 - Instructions never changed
 
+### Input 
+### Output Devices
+
+Barcodes - lines/blanks = 1/0 - 2D barcoder = QR
+Inkjet printer - small, inexpensive - 10 diff colours max - Dis: ink smears
+Laser printer - toner, fast, reliable, good quality - for fliers
+Dot matrix - multi-port stationary uses - expensive, noisy, poor quality
+
 ## System software
 
 OS - manages operations of computer - links user to PC
+OS - collection of programs that provide an interface between user & computer:
+  1) Memory management    - paging & seg
+  2) File management
+  3) Peripheral management
+  4) Interrupts
+  5) Security
+  6) UI (User Interface)
+  7) Utility Software:
+      - Defragementation
+      - Auto backups + updates
+      - Virus checks / anti-malware
+      - Compression software
+  8) Resource management (scheduling)
+
 loader - in ROM - instructions to load OS - copy from storage to RAM
 BIOS - boots up OS - Stored in ROM - tests hardware working 
 
@@ -109,13 +132,6 @@ Interrupt - signal from software/device/clock to CPU
 ISR - Internet Service Routine - fixes interrupts - specific routines
 Scheduler - module, managing processor time - multi-task instructions
 
-#### Input 
-#### Output Devices
-
-Barcodes - lines/blanks = 1/0 - 2D barcoder = QR
-Inkjet printer - small, inexpensive - 10 diff colours max - Dis: ink smears
-Laser printer - toner, fast, reliable, good quality - for fliers
-Dot matrix - multi-port stationary uses - expensive, noisy, poor quality
 
 **Questions**:
 Difference between global vs local variable[2]:
@@ -126,6 +142,53 @@ Difference between paging & segmentation[2]:
 - Paging - physical addressing || segmentation - logical addressing
 - Paging - fixed size memory blocks || segmentation - variable length memory blocks
 
+### Scheduling - how CPU time allocated in multi-access system
+Round Robin - each job has time slice - if not done in time, move to back
+ - Adv: equal time for all jobs, fair 
+ - Dis: Longer jobs take much longer, no job priority
+FCFS - a queue - first job arrives, executes until complete || Adv: easy to implement
+ - Dis: no job priority
+Shortest Remaining Time - SRT - completion time estimated as a job arrives - job with SRT executed
+  - new shorter jobs can take over from current job mid-process
+Shortest Job First - total exe time estimaed by user - waiting job with shortest time goes after current job done 
+- Adv: throughput increased, shorter jobs quickly done
+- Dis; no job priority, long job starvation if jobs keep getting added
+Multi-level feedback queue - multiple queues created with priority levels
+- if job uses too much CPU time - moved to lower priority queue
+- jobs moved up if waited a long time
+- Dis: hard/long to implement
+
+### Types of OS
+Distributed - run across multiple devices - load of task spread across multiple processors
+Embedded - small range of specific tasks  catered to specific device
+ - limited functionality, hard to update
+ - Consume lowest power
+Multi-tasking - user can do tasks simultaneously
+ - time-slicing used to switch quickly between programs & apps in memory
+Multi-user - many users on one computer (at same time)
+ - scheduling used to allocate CPU time fairly, prevent processor starvation
+Real-time - used in time-critical systems - performs tasks in guaranteed time frame
+
+## Types of Programming Languages
+Programming Paradigm - different approaches to using a language to solve a problem / style of programming:
+Imperative - specifies actions to perform with input:
+1) Procedural - easy to write & interpret - sequence of instructions within procedures - Python, Pascal, C#
+2) OOP - focuses on reusability, easy to update & maintain - Java, C++,
+
+Declarative - states desired result, language finds best way of solving it 
+- SQL (create,amend,query databases)
+- how solution obtained abstracted from user:
+1) Functional - reuse set of functions - made up of function calls, often combined within each other
+   - linked closely to maths
+   - Haskell, Javascript
+2) Logic - defines set of facts based on problem, queries for answers to problems - consists of logical statements - Prolog
+
+Structured - uses sequence,selection,iteration and recursion, not 'goto' statements (subsection of procedural)
+- modular techniques split large problem to manageable chunks
+
+Assembly Language - mnemonics - easier to use than machine code
+- each mnemonic represented by numeric code
+- commands processor-specific - directly interacts with CPU registers
 
 ## Databases
 Lossy compression - remove unneeded info - less file size, worse quality
@@ -437,111 +500,7 @@ Summary:
 
 
 
-## **PAPER 2**
-
-
-## Computational Thinking
-### Thinking Abstractly
-Computational Thinkikng - to think logically about a problem and apply techniques to solve it
-Abstraction - separating logical & physical aspects of a problem
-- devising a model representing reality
-- removing details irrelevant to problem
-- e.g London underground map, scuba diving map
-- problem abstraction - removing details until problem is one already solved
-- after abstraction - algorithms + data structures designed to solve problem
-- real-world models eg: climate change model predicting temperature, aircraft simulator.
-
-### Thinking Ahead
-Input --> problem --> Output
-Input - info relevant to problem - e.g parameters passed to subroutine
-Output - solution to problem - passed from subroutine
-When making solution:
-- algorithm correct - works for all possible inputs
-- algorithm efficient - can involve huge data, need quickest algorithm
-Specifying preconditions advantages:
-- program components reusable - save time writing&testing functions - already tested
-- less unnecessary checks
-- easier to debug & maintain - clear + shorter
-Programming standards:
-- inputs, outputs, preconditions documented
-- Variable names conventional
-- variables local to module
-- documentation in standard format - what, who, date
-- explanations of code
-
-### Thinking computationally
-
-### Programming Techniques
-Algorithm - set of instructions specifying how to solve a problem - input, processing, output
-Comments - // - explain program
-Data type - integer, float, boolean, character, string
-round() - round(number, d.p)
-Exponent - ** - 2**5 = 2^5
-Integer division - div - whole number answer - //
-Modulo div - mod - remainder - %
-String.find(str) - returns index if found, -1 if not
-date(year, month, day) - returns data you can calculate with
-Variable - identifiers given to memory locations - change during processing
-Constant - identifier - value never changes during processing
-  - Adv: in long program - no chance of accidentally changing/using value
-
-#### Sequence, Selection, Iteration
-Sequence - 2+ statements executed one after the other
-Selection - selects which statement to be executed based on a condition
-Switch/case - nested if - choice between several alternatives
-NOT (a < b) =  a >= b
-Iteration - a loop to repeat statements
-While loop - 2 properties: 1) expression condition controlling loop must be BOOLEAN
-  - 2) Expression tested at start of loop
-Repeat-until - 'until' condition at end of loop
-for-next - exact number of loops - increments each time
-
-#### Subroutines, Recursion
-Subroutine - named block of code, performs a specific task in a program
-Function - returns a value to a variable - any normal function
-Procedure - calls by its name - doesn't return value - e.g print(), sum()
-
-Pass by value - actual value is passed to subroutine, treated as local variable
-  - changing parameter inside subroutine wont affect value outside
-    - all parameters passed by value in python
-
-Pass by reference - ADDRESS of parameter passed to subroutine 
-  - changing inside subroutine will change it outside - as they refer to same memory location
-
-Global variables - visible & accessible anywhere in program
-Local variables - only visible in subroutine/module it was created in
-Encapsulation - subroutines fully independent to rest of program
-Modular programming - breaking down long, complex program into many subtasks/routines
-
-Subroutine Advantages:
-1) understand as a unit of code - easy to understand, debug, maintain
-2) Tested independently - shorten time to get large program working
-3) reuseable in different parts or programs
-4) modular approach - multiple programmers work on program at once - focus on different subroutines - efficient
-5) easier to monitor and control
-  
-Recursion - subroutine calls itself within its subroutine:
-- 1) base case / stop condition - routine stops calling itself
-- 2) Routine must call itself - for input values other than stop condition
-- 3) stopping condition reached after finite number of calls
-
-Call stack - each time routine called, return address, parameters, local variables - held in stack frame
-  - popped from stack at end of routine
-
-#### IDE
-Integrated Development Environment
-Features:
-1) Line numbers
-2) Code editor
-3) Translator (Compiler/Interpreter)
-4) debugging - syntax errors
-
-Tools:
-1) breakpoint - program stops on that line
-2) watch - value displayed each time variable changes
-3) step through program line at a time
-
-#### OOP
+## OOP
 Object - world viewed as collection of objects -- person, animal, place, stack etc.
 - Attribute - details of object -- name, lastname, DoB etc.
 - state - each object has its state -- what/where it is right now 
@@ -578,7 +537,128 @@ Polymorphism - process objects differently depending on class
   4. Reinforces security
 
 
-### Algorithms
+
+## Abstraction
+Representational abstraction - representation arrived at by removing unnecessary details
+Uses:
+- any computer model, new car, flight simulator
+- maps
+data abst - how data actually represented hidden - abstract data types
+
+- make sure function never crashes - test for an empty list OR precondition
+Precondition advantages - user knows what checks before subroutine
+- if no preconditions - checks in subroutine - less code
+- reusable
+
+Procedural abstraction - using procedure to carry out an algorithm - sequence of steps for completing a task
+procedure interface - necessary info seen by user
+
+# **PAPER 2**
+
+
+## Computational Thinking
+### Thinking Abstractly
+Computational Thinkikng - to think logically about a problem and apply techniques to solve it
+Abstraction - separating logical & physical aspects of a problem
+- devising a model representing reality
+- removing details irrelevant to problem
+- e.g London underground map, scuba diving map
+- problem abstraction - removing details until problem is one already solved
+- after abstraction - algorithms + data structures designed to solve problem
+- real-world models eg: climate change model predicting temperature, aircraft simulator.
+
+### Thinking Ahead
+Input --> problem --> Output
+Input - info relevant to problem - e.g parameters passed to subroutine
+Output - solution to problem - passed from subroutine
+When making solution:
+- algorithm correct - works for all possible inputs
+- algorithm efficient - can involve huge data, need quickest algorithm
+Specifying preconditions advantages:
+- program components reusable - save time writing&testing functions - already tested
+- less unnecessary checks
+- easier to debug & maintain - clear + shorter
+Programming standards:
+- inputs, outputs, preconditions documented
+- Variable names conventional
+- variables local to module
+- documentation in standard format - what, who, date
+- explanations of code
+
+### Thinking computationally
+
+## Programming Techniques
+Algorithm - set of instructions specifying how to solve a problem - input, processing, output
+Comments - // - explain program
+Data type - integer, float, boolean, character, string
+round() - round(number, d.p)
+Exponent - ** - 2**5 = 2^5
+Integer division - div - whole number answer - //
+Modulo div - mod - remainder - %
+String.find(str) - returns index if found, -1 if not
+date(year, month, day) - returns data you can calculate with
+Variable - identifiers given to memory locations - change during processing
+Constant - identifier - value never changes during processing
+  - Adv: in long program - no chance of accidentally changing/using value
+
+## Sequence, Selection, Iteration
+Sequence - 2+ statements executed one after the other
+Selection - selects which statement to be executed based on a condition
+Switch/case - nested if - choice between several alternatives
+NOT (a < b) =  a >= b
+Iteration - a loop to repeat statements
+While loop - 2 properties: 1) expression condition controlling loop must be BOOLEAN
+  - 2) Expression tested at start of loop
+Repeat-until - 'until' condition at end of loop
+for-next - exact number of loops - increments each time
+
+## Subroutines, Recursion
+Subroutine - named block of code, performs a specific task in a program
+Function - returns a value to a variable - any normal function
+Procedure - calls by its name - doesn't return value - e.g print(), sum()
+
+Pass by value - actual value is passed to subroutine, treated as local variable
+  - changing parameter inside subroutine wont affect value outside
+    - all parameters passed by value in python
+
+Pass by reference - ADDRESS of parameter passed to subroutine 
+  - changing inside subroutine will change it outside - as they refer to same memory location
+
+Global variables - visible & accessible anywhere in program
+Local variables - only visible in subroutine/module it was created in
+Encapsulation - subroutines fully independent to rest of program
+Modular programming - breaking down long, complex program into many subtasks/routines
+
+Subroutine Advantages:
+1) understand as a unit of code - easy to understand, debug, maintain
+2) Tested independently - shorten time to get large program working
+3) reuseable in different parts or programs
+4) modular approach - multiple programmers work on program at once - focus on different subroutines - efficient
+5) easier to monitor and control
+  
+Recursion - subroutine calls itself within its subroutine:
+- 1) base case / stop condition - routine stops calling itself
+- 2) Routine must call itself - for input values other than stop condition
+- 3) stopping condition reached after finite number of calls
+
+Call stack - each time routine called, return address, parameters, local variables - held in stack frame
+  - popped from stack at end of routine
+
+## IDE
+Integrated Development Environment
+Features:
+1) Line numbers
+2) Code editor
+3) Translator (Compiler/Interpreter)
+4) debugging - syntax errors
+
+Tools:
+1) breakpoint - program stops on that line
+2) watch - value displayed each time variable changes
+3) step through program line at a time
+
+
+## Algorithms
 Functions - maps one set of values to another
 - linear function = ax + c
 - polynomial - ax^m + bx + c
@@ -586,7 +666,7 @@ Functions - maps one set of values to another
 - logarithmic - a logn x
 
 Permutations - number of ways of arranging objects - factorial, x!
-#### Big O notation - O(n)
+### Big O notation - O(n)
 - simplified analysis of an algorithm's efficiency - finds runtime and space
 - finds complexity in terms of input size, N
 - machine-independent
@@ -617,7 +697,7 @@ Types of measurements:
 - Best Case
 - Average Case
 
-#### Searching
+## Searching
 
 Linear search - unordered - items searched one-by-one until requird item found/end list reached
 - time complexity for linear search = O(n)
@@ -659,7 +739,7 @@ Binary Search - ordered - dividing list in half that could have required item
           else:
             return middle  
 
-#### Sorting
+## Sorting
 
 Bubble sort - compare each item with one next to it - if greater, swap
     - last element will be correct after first pass
@@ -720,7 +800,7 @@ Quick Sort - select value - pivot value(usually 1st item) - at split point:
 - Dis: if split point not near middle of list, takes longer
       - if list large, recursion cause stack overflow - crash
 
-#### Graph traversal
+## Graph traversal
 Depth-first - stack - go as far down one route, backtrack & take next route
 - Uses:
   - scheduling jobs
@@ -732,22 +812,8 @@ Breadth-first - queue - visit all nodes connecting to A, then move to B
   - Web crawlers
 
 
-#### Dijkstra Algorithm - Shortest Path
+## Dijkstra Algorithm - Shortest Path
 
-#### Abstraction
-Representational abstraction - representation arrived at by removing unnecessary details
-Uses:
-- any computer model, new car, flight simulator
-- maps
-data abst - how data actually represented hidden - abstract data types
-
-- make sure function never crashes - test for an empty list OR precondition
-Precondition advantages - user knows what checks before subroutine
-- if no preconditions - checks in subroutine - less code
-- reusable
-
-Procedural abstraction - using procedure to carry out an algorithm - sequence of steps for completing a task
-procedure interface - necessary info seen by user
 
 
 
