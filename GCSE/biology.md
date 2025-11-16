@@ -150,7 +150,7 @@ Stomata & guard cells - lower epidermis full of stomata, controlled by guard cel
 
 Xylem - tube of tissue from roots to leaf, carrying water and minerals from roots. One-way process upwards
 Phloem - tube of cellulose, transports water, food nutrients etc. both up and down plant, with end walls and perforations
-Translocation - process that moves sugars through phloem to rest of plant - for energy
+Translocation - moves sugars through phloem to plant - for energy
 Transpiration - loss of water from plant through evaporation and diffusion on leaves. Makes more water get drawn up through xylem called transpiration stream --> Water then diffuses out of stomata --> evaporates into air.
 Transpiration rate - affected by: light intensity, temperature, air flow, humidity
 Potometer - method to test for transpiration rate
