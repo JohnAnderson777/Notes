@@ -106,7 +106,6 @@ Dot matrix - multi-port stationary uses - expensive, noisy, poor quality
 
 ## System software
 
-OS - manages operations of computer - links user to PC
 OS - collection of programs that provide an interface between user & computer:
   1) Memory management    - paging & seg
   2) File management
@@ -121,12 +120,10 @@ OS - collection of programs that provide an interface between user & computer:
       - Compression software
   8) Resource management (scheduling)
 
-loader - in ROM - instructions to load OS - copy from storage to RAM
-BIOS - boots up OS - Stored in ROM - tests hardware working 
-
 Paging - memory held in pages - each 4KB
 Page table - maps link between physical (RAM) & virtual (logical) memory address space
 Segmentation - logical division of address space into different lengths
+
 Virtual memory - extra disk storage when RAM is full - move from RAM and back
 Interrupt - signal from software/device/clock to CPU
 ISR - Internet Service Routine - fixes interrupts - specific routines
@@ -139,8 +136,8 @@ Difference between global vs local variable[2]:
 - Local - only visible in module it is created in
 
 Difference between paging & segmentation[2]:
-- Paging - physical addressing || segmentation - logical addressing
-- Paging - fixed size memory blocks || segmentation - variable length memory blocks
+- P: physical || S: logical addressing
+- - P: fixed size || S: variable length memory blocks
 
 ### Scheduling - how CPU time allocated in multi-access system
 Round Robin - each job has time slice - if not done in time, move to back
@@ -159,15 +156,56 @@ Multi-level feedback queue - multiple queues created with priority levels
 - Dis: hard/long to implement
 
 ### Types of OS
-Distributed - run across multiple devices - load of task spread across multiple processors
-Embedded - small range of specific tasks  catered to specific device
+Distributed - coordinate job across multiple devices - load of task spread across multiple processors
+- user can access more power with illusion of working with single processor
+- Adv: no training/writing different programs
+- Dis: no control over task distribution
+Embedded - small range of specific tasks catered to specific device
  - limited functionality, hard to update
  - Consume lowest power
+ - apps held in ROM, limited RAM
 Multi-tasking - user can do tasks simultaneously
  - time-slicing used to switch quickly between programs & apps in memory
 Multi-user - many users on one computer (at same time)
  - scheduling used to allocate CPU time fairly, prevent processor starvation
-Real-time - used in time-critical systems - performs tasks in guaranteed time frame
+Real-time - used in time-critical/safety-critical systems - performs tasks in guaranteed time frame
+ - respond quickly to inputs, & many inputs at once
+ - has a fail-safe
+ - hardware redundancy - vital components duplicated if fails
+
+### BIOS
+BIOS - stored in ROM - first program to run on start-up - tests hardware:
+   - POST(Power-on self test) - ensures all hardware connected & functional
+   - Check CPU clock, memory & processor operational
+   - Test for external memory devices connected
+- After checks done - loads OS into RAM - from hard disk by bootloader
+
+### Drivers
+Driver - provides an interface for OS to interact with hardware
+- hardware dependent, OS specific
+- when hardware used, driver communicates request to OS, OS produces output
+
+### Virtual Machine
+- software emulating hardware - software emulates machine - running one OS inside another to emulate different hardware
+- provides an environment with translator for intermediate code
+- intermediate code (code halfway between machine & object code) - independent of processor, can be used again
+- running intermediate code in VM is slower
+- uses: tests programs on different OS - save time&money for multiple devices
+      - protection from malware - affects VM only
+      - Running incompatible software
+
+## Application Generation
+System software: OS, Utility Software, Libraries, translators
+ - provides a platform for application software to run
+libraries & translators - allow programs to use pre-written routines, translated into executable code
+Utility Software:
+- disk defragmentation - reorganises hard drive so files in sequential blocks - large files split up physically
+  - files accessed quicker, R/W times faster
+- Auto backups + updates - detects update releases, auto installs, fixes security issues
+- Virus checker / anti-malware - scans files, uses heuristics - knows types of behaviour used by malware 
+      - find which files have virus based on behaviour (can flag a normal file as virus)
+- Compression - lossy/lossless
+
 
 ## Types of Programming Languages
 Programming Paradigm - different approaches to using a language to solve a problem / style of programming:
