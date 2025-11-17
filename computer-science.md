@@ -206,6 +206,23 @@ Utility Software:
       - find which files have virus based on behaviour (can flag a normal file as virus)
 - Compression - lossy/lossless
 
+Compiling:
+Lexical - whitespace & comments removed
+  - rest is analysed for keywords, variables - replaced with tokens, stored in symbol table
+Syntax - tokens checked for grammar & rules
+Semantic - logic mistakes checked
+ - abstract syntax tree produced - source code in tree frorm - then produces machine code
+Optimisation - searches to make code more efficient - make code faster to exe. - makes compilation longer
+ - redundant code parts removed, grouped code replaced
+
+Linker - external compiled object code combined with compiled program
+- Static - added directly to main file - increases file size
+- Dynamic - addresses of modules referenced in code - external updates feed to main file - file stays small
+Loader - copies object program into main store ready for execution
+  - retrieves library/routine from given memory location
+Library - collection of pre-compiled routines, put into program
+ - readyto-use, error free, reuseable
+
 
 ## Types of Programming Languages
 Programming Paradigm - different approaches to using a language to solve a problem / style of programming:
@@ -227,6 +244,19 @@ Structured - uses sequence,selection,iteration and recursion, not 'goto' stateme
 Assembly Language - mnemonics - easier to use than machine code
 - each mnemonic represented by numeric code
 - commands processor-specific - directly interacts with CPU registers
+ADD - ADD  - 1xx
+SUB - subtract - 2xx
+STA - store - 3xx
+LDA - load - 5xx
+.
+BRA - branch always - without checking - 6xx
+BRZ - Branch if zero - 7xx
+BRP - branch if zero or positive - 8xx
+.
+INP - input - 901
+OUT - output - 902
+DAT - data storage
+HLT - end (halt) - 000
 
 ## Databases
 Lossy compression - remove unneeded info - less file size, worse quality
@@ -450,6 +480,9 @@ Floating point addition/subtraction:
 Shifting - logical - ignore sign bit
          - arithmetic - keep sign bit
 Masks - apply boolean expression(AND,OR) to bit to check it
+- AND: extracts bits corresponding to 1s - only bits that byte & mask are both 1s
+- OR: 1 if either mask or byte is 1
+- XOR: if both byte and mask are 1, its 0, if only one is 1, its 1
 
 **Questions**:
 Hexadecimal rather than binary [2/3]:
@@ -590,6 +623,94 @@ Precondition advantages - user knows what checks before subroutine
 
 Procedural abstraction - using procedure to carry out an algorithm - sequence of steps for completing a task
 procedure interface - necessary info seen by user
+
+
+## PAPER 1 PP QUESTIONS:
+State purpose of three buses [3]:
+Data - carries data/instructions between hardware/memory and CPU
+Address - carries memory address (where data sent to(memory), or retrieved from(CPU))
+Control - carries control signals to coordinate CPU operations
+
+State a storage device for HD images & videos: [2]
+SSD: 
+- robust
+- fast R/W speeds
+- large storage
+Magnetic:
+- cheap (per unit)
+- large enough storage
+- fast R/W speeds
+
+GPU - simple operations in parallel on larger data sets
+CPU - complex operations on smaller data sets
+
+State 2 benefits of GPU in games: [2]
+- more responsive
+- shorter load time
+- higher framerate / smooth gameplay
+- high resolution
+
+Describe multi-level feedback queue works: [3]
+- processes into different queues
+- each queue different priority / scheduling
+- processes can move between queues (based on processor time)
+- minimises 1/0 bottlenecks
+- balances longer & shorter processes
+
+Explain why hardware requires driver [2]:
+- Allows peripherals with different manufacturers to work with different OS
+- translates OS instructions into device form
+- Abstracts hardware complexity (OS & software dont need to knew specific commands)
+
+State 2 Utilities Charlie could install [4]:
+1) Defrag
+   - fragmented files in consecutive storage locations
+2) Encryption
+   - scrambles data so cannot be understood
+3) Compression
+   - reduces file storage / creates more space
+4) anti-virus
+   - protects computer from threats/malware/hacking
+5) File repair, Backup, system clean-up, firewall
+
+Compare 2 differences between Von Neumann & Harvard architecture [4]:
+1) VN stores D&I in same memory unit || Harvard stores D&I in separate memory units [2]
+2) VN fetches D&I sequentially/with FDE cycle || Harvard fetches D&I and same time [2]
+3) VN uses single bus for both D&I || Harvard uses different buses for D&I [2]
+
+State 2 benefits of pipelining: [2]
+- Increased throughput ( of CPU)
+- CPU more efficient
+- Reduces latency(idle time)
+- Allows FDE cycle parts to happen simultaneously (increases performance)
+
+Compare 2 differences between RISC and CISC [4]:
+1) CISC large instruction set || RISC smaller instruction set [2]
+2) CISC requires complex hardware/cooling || RISC less complex hardware/little cooling
+3) CISC takes multiple clock cycles per instruction || RISC takes one clock cycle
+4) CISC uses more energy || RISC uses less energy
+5) CISC more || RISC fewer addressing modes
+6) CISC more RAM || RISC less RAM
+7) CISC difficult || RISC easier to pipeline 
+
+Describe benefit of making CPU a multi-core CPU [2]:
+- multiple instructions can be processed at same time
+- Improves multi-tasking
+- allows parallel processing
+- increases (computer) performance
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # **PAPER 2**
 
