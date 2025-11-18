@@ -87,7 +87,6 @@ parallel - single core, use threading
 Describe Harvard architecture[2]:
 - separate memory blocks for instructions & data
 - separate buses (data, address) for I & D
-- fixed memory sizes for I & D
 - instruction memory may be ROM
 
 Why Harvard suitable for embedded system:
