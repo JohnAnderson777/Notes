@@ -189,6 +189,48 @@ Coding - doing an operation on every value in data set, simplifying x --> y
    Standard deviation - addition/subtraction doesnt affect it, only multiply/divide
 
 
+### Sampling
+
+Census - results completely accurate 
+- time consuming + expensive, cant be used if testing destroys, long to process large data
+Sample - fewer responses needed - less data processed
+- data less accurate
+- sample not large enough to give info about about small subgroups in population
+
+##### Random Sampling::
+Simple random - every sample has equal chance of selection
+ - no bias, easy+cheap, fair
+ - not suitable for large populations/samples
+ - sampling frame needed 
+
+Systematic - chosen at regular intervals from ordered list
+- simple ,quick, suitable for large pops/samples
+- Dis: sampling frame needed, bias if frame not random
+
+Stratified - population divided into (mutually exclusive) strata, random sample taken from each
+ - number in each stratum = no in stratum / no in population x sample size
+- accurately reflects population structure
+- proportional representation of groups
+- Dis: population must be categorised, sampling frame, not suitable if strata large
+
+##### Non-random Sampling:
+Quota - researcher selects sample that reflects characteristics of whole population
+- Adv: small sample still representative of population
+  - no sampling frame
+  - quick,easy, cheap
+  - easy group comparison in popul.
+- Dis: bias
+  - population categorised
+  - increasing scope = increases groups = more time & cost
+
+Opportunity - sample taken from available people who fit a criteria:
+- easy, cheap
+- not representative 
+- highly dependent on individual researcher
+
+
+
+
 ### Probability
 Outcome - a possibility that can happen
 Event - 'groups' of outcomes
