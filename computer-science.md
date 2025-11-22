@@ -894,6 +894,23 @@ Types of measurements:
 
 ## Searching
 
+HASH TABLE - find any record instantly no matter size
+- large data set organised - each record has unique address
+- address calculated with hashing algorithm/function
+- resulting data structure to store data = hash table
+collision - same address for different primary keys - aka synonym
+- solution: put item in next free slot || Dis: leads to 'clustering' of items
+  - or increment a 'skip' value - 1,3,5,7 
+- table size large enough so load factor is not > 50-70% of table size
+Hashing alternatives: Mid-square method:
+- square item, extract portion of digits
+- perform MOD(remainder) to get an address
+Folding method:
+- divide item into equal pieces, add pieces together
+- perform MOD to get address
+for letters - Alphanumeric data:
+- use ASCII code for each character - apply hashing algorithm
+
 Linear search - unordered - items searched one-by-one until requird item found/end list reached
 - time complexity for linear search = O(n)
 - Psuedocode for linear:
