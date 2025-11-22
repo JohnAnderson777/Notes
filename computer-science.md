@@ -715,18 +715,19 @@ Describe benefit of making CPU a multi-core CPU [2]:
 
 
 ## Computational Thinking
-### Thinking Abstractly
 Computational Thinkikng - to think logically about a problem and apply techniques to solve it
+
+### Thinking Abstractly
 Abstraction - separating logical & physical aspects of a problem
 - devising a model representing reality
 - removing details irrelevant to problem
-- e.g London underground map, scuba diving map
+- e.g London underground map, scuba diving map, money (abstract concept, no real value)
 - problem abstraction - removing details until problem is one already solved
 - after abstraction - algorithms + data structures designed to solve problem
 - real-world models eg: climate change model predicting temperature, aircraft simulator.
 
 ### Thinking Ahead
-Input --> problem --> Output
+Input --> problem --> (storage) --> Output
 Input - info relevant to problem - e.g parameters passed to subroutine
 Output - solution to problem - passed from subroutine
 When making solution:
@@ -742,8 +743,32 @@ Programming standards:
 - variables local to module
 - documentation in standard format - what, who, date
 - explanations of code
+Reusable components - coding more efficient, reduce errors, saves time, ensure consistency
+Caching - speeds us computer processes - stores frequently accessed data in faster memory location
+  - reduce time to retrieve data from secondary storage
+  - e.g web browsers storing parts of webpage for when user revisits page
+  - Dis: if stored data outdated, incorrect results - data needs refreshing
 
-### Thinking computationally
+#### Procedurally
+Decomposition - breaking complex problem into smaller, more manageable sub-problems
+ - each smaller part solved individually & combined
+ - Adv: large teams to work on one problem at once, makes hard problems simple to solve
+ - Structure chart - visually represent large problem broken into sub-problems
+     - each box is smaller problem
+     - lines show which bigger problem box is part of
+
+#### Logically
+Pseudocode - plan algorithms - focusing on logic and steps, not Syntax - very readable, easy to understand
+Flow diagram - visually represent algorithm steps - arrow shows flow of control
+- oval =start/end, rectangle = process, parallelogram = input/output, diamond = decision (Yes or No)
+
+#### Concurrently
+Concurrency - split problem into smaller tasks, done at same time (for independent tasks)
+- Adv: speed - job finished quicker
+- Dis: needs tasks independency, if dependent, makes task complicated
+  - race condition - 2 parts of program try change same file at same time
+
+
 
 ## Programming Techniques
 Algorithm - set of instructions specifying how to solve a problem - input, processing, output
@@ -766,24 +791,27 @@ Switch/case - nested if - choice between several alternatives
 NOT (a < b) =  a >= b
 Iteration - a loop to repeat statements
 While loop - 2 properties: 1) expression condition controlling loop must be BOOLEAN
-  - 2) Expression tested at start of loop
-Repeat-until - 'until' condition at end of loop
-for-next - exact number of loops - increments each time
+  - 2) Expression tested at start of loop - Indefinite
+Repeat-until - 'until' condition at end of loop - Indefinite
+for-next - exact number of loops - increments each time - Definite
+Infinite loop - use to gather data from sensors constantly
+
 
 ## Subroutines, Recursion
 Subroutine - named block of code, performs a specific task in a program
 Function - returns a value to a variable - any normal function
 Procedure - calls by its name - doesn't return value - e.g print(), sum()
 
-Pass by value - actual value is passed to subroutine, treated as local variable
+Pass by value - copy of value is passed to subroutine, treated as local variable
   - changing parameter inside subroutine wont affect value outside
-    - all parameters passed by value in python
+    - all parameters passed by value in python - usual default
 
 Pass by reference - ADDRESS of parameter passed to subroutine 
   - changing inside subroutine will change it outside - as they refer to same memory location
 
 Global variables - visible & accessible anywhere in program
 Local variables - only visible in subroutine/module it was created in
+  - Adv: Subroutines independent of program - problems outside don't affect
 Encapsulation - subroutines fully independent to rest of program
 Modular programming - breaking down long, complex program into many subtasks/routines
 
@@ -803,17 +831,26 @@ Call stack - each time routine called, return address, parameters, local variabl
   - popped from stack at end of routine
 
 ## IDE
-Integrated Development Environment
+Integrated Development Environment - software packages that facilitate software development
 Features:
 1) Line numbers
-2) Code editor
-3) Translator (Compiler/Interpreter)
-4) debugging - syntax errors
+2) Code editor - includes: syntax highlighting, code-completion
+3) Translator (Compiler/Interpreter) - built in - 'Run' button
+4) debug tools - highlight syntax errors + debugger
+5) Run-Time environment - run programs to test - multiple RTEs available, simulate on different devices
 
 Tools:
 1) breakpoint - program stops on that line
 2) watch - value displayed each time variable changes
 3) step through program line at a time
+
+## Testing:
+- checks program: works as intented with good data, copes with errors when given bad data
+Iterative - testing code as it is written
+Terminal - end of development - checks how software performs with a certain set of data:
+ - valid data - correct || Extreme(boundary) - on boundary of valid range
+ - erroneous - incorrect data outside range or wrong type
+- null data - nothing entered
 
 
 ## Algorithms
@@ -843,12 +880,12 @@ Rules:
   low order ----> high order
   
 - O(1) = constant time - fastest (best) case
+- O(log n) = logarithmic time 
+  - binary search = O(log2 n)
 - O(n) = linear time - N * O(1)
-- O(n^2) = quadratic time - N * O(n)
+- O(n^2) = quadratic time - N * O(n) - bubble sort
     - 2 nested loops
 - O(2^n) = Exponential time 
-- O(log n) = logarithmic time 
-    - binary search = O(log2 n)
 
 Types of measurements:
 - Worst Case (usual)
@@ -902,31 +939,27 @@ Binary Search - ordered - dividing list in half that could have required item
 Bubble sort - compare each item with one next to it - if greater, swap
     - last element will be correct after first pass
     - repeats n-2 times
-- time complexity = O(n^2)
+  - Adv: Easy to implement, little memory
+  - Dis: not efficient - time complexity = O(n^2)
+
 - Psuedocode (flag for no unneccessary passes):
-     <c numbers list [1,2,3,4,5 etc] >
-      numItems = len(numbers)
-      flag = True
-      while i < (numItems - 1) AND flag = True:
-        flag = False
-        for j = 0 to numItems - i - 2:
-          if numbers[j] > numbers[j+1]:
-    <c  swap >
-          temp = numbers[j]
-          numbers[j] = numbers[j+1]
-          numbers[j+1] = temp
-          flag = True
-        j +=1
-      i += 1
-      print(numbers)
+  list = [list] 
+  sorted = false
+  while sorted = False:
+    for i = 1 to len(list) - 1:
+      if list[i-1] > list[i]:
+        swap(list[i-1], list[i])
+        sorted = True
+  
 
 Insertion - takes one item at a time, places in correct location
 - more efficient than bubble
 - time complexity = O(n^2)  --  if nearly sorted, close to O(n)
+- Adv: easy to implement, little memory || Dis: not efficient (better than bubble)
 - Psuedocode:
       procedure insertionSort(list):
-      n = len(list)
-      for i = 1 to n-1:
+
+      for i = 1 to len(list) - 1:
         key = list[i]
         j = i - 1
 
@@ -937,6 +970,8 @@ Insertion - takes one item at a time, places in correct location
 
 Merge Sort - divide & conquer - divides until sublists are 1 item, merged and sorted into single list
 - time complexity = O(n log n)
+- Adv: very efficient
+- Dis: slower for small lists, additional memory
 - Psuedocode:
         mergesort(list)
         if len(list) > 1:
@@ -959,6 +994,8 @@ Quick Sort - select value - pivot value(usually 1st item) - at split point:
       - if list large, recursion cause stack overflow - crash
 
 ## Graph traversal
+Tree - connected, undirected graph with no cycles
+- rooted tree = one node is root - has parents & child nodes
 Depth-first - stack - go as far down one route, backtrack & take next route
 - Uses:
   - scheduling jobs
@@ -969,6 +1006,22 @@ Breadth-first - queue - visit all nodes connecting to A, then move to B
   - Facebook - friends links
   - Web crawlers
 
+Binary tree:
+- less = left, more = right
+- Pre-order - Root, left, right - Root, LR
+- Algorithm: 
+
+{
+print(tree[p].data)
+if tree[p].left <> -1:
+  traverse(tree[p].left)
+if tree[p].right <> -1:
+  traverse(tree[p].right)
+}
+
+- In-order - Left, Root, right - L,Root,R
+- Post-order - Left, Right, Root- LR,Root
+  - algorithm same but, print(tree[p].data) at END OF CODE
 
 ## Dijkstra Algorithm - Shortest Path
 
@@ -976,9 +1029,28 @@ Breadth-first - queue - visit all nodes connecting to A, then move to B
 
 
 
+
+## Seneca:
+### Computational Thinking
+
+### Programming Techniques
+Variable - named memory location, value can change during execution
+Constant - cant change during execution
+Assignment - setting a value to a variable/constant
+Subroutines: Adv: easier to read, more efficient, more reliable, reusability - reduce errors
+- parameters - special variable - pass values into subroutine
+- arguments - actual values entered, that are passed in
+- function - returns value, procedure - doesn't return value
+scope - area that code can be accessed
+local variable - only accessible/visible from subroutine declared in
+global variable - accessible from any part in program
+
+
+
+
+
+
 # GCSE
-
-
 
 ## Paper 1 - Computer Systems
 
