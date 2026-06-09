@@ -7,14 +7,16 @@
 
 ## Computer Components
 Control Unit - controls, coordinates CPU activity - directs flow of data between CPU & devices, decodes instructions, stores resulting data back in memory/registers
-Bus - set a of parallel wires connecting computer components - 8,16,32,64 lines
-address bus - when CPU sends address to memory - transmits memory addresses of words used in instructions, so data can be retrieved & sent to processor.
-data bus - sends data returned to CPU - 8,16,32,64 lines - bi-directional - moving data and instructions
+Bus - set a of parallel wires connecting computer components 
+  - width of bus = parallel wires it has  8,16,32,64 wires - more wires = more bits sent at once
+Address bus - when CPU sends address to memory - transmits memory addresses of words used in instructions, so data can be retrieved & sent to processor.
+ - specifies where data is to be sent to or retrieved from
+Data bus - sends data and instructions between CPU & components - 8,16,32,64 lines - bi-directional
   - when instruction is performed and result is stored at particular memory location, data bus used
-control bus - sends control signals - bi-directional - transmit command, timing, specific status info between components:
+Control bus - sends control signals - bi-directional - transmit command, timing, specific status info between components:
 Control Signals:
-  - Bus request - indicates device request data bus
-  - bus grant - indicates CPU grant data bus
+  - Bus request - indicates device request for data bus
+  - bus grant - indicates CPU grant for data bus
   - Memory write - data on data bus written into addressed location
   - Memory read - data from addressed location placed on data bus
   - Interrupt request - device request access to CPU
@@ -24,31 +26,49 @@ word - unit of memory - fixed size group of digits - 16,32,64 bits - handled by 
 
 Registers - very high speed special memory cells - temporarily stores all operation results:
 
-ALU(Arithmetic-Logic Unit) - performs arithmetic & logical operations, shift operations, boolean logic operations - AND, OR, NOT, XOR
-Accumulator - 
+ALU(Arithmetic-Logic Unit) - performs arithmetic & logical operations, shift operations, boolean logic operations - AND, OR, NOT, XOR (ALU is actually not a register, its a unit, like control unit)
+Accumulator - stores results from calculations 
 PC(Program counter) - holds address of next instruction to be executed 
   - if current instruction is a branch/jump, holds address to jump to, copied from CIR
-Current Instruction Register(CIR) - holds current instruction execuded, operand and opcode
- - opcode - determine type of instruction, what hardware to execute it
+Current Instruction Register(CIR) - holds current instruction executed, operand and opcode
+ - opcode - determine type of instruction + hardware to execute it
  - operand holds either: address of data, copied to MAR \\ actual data, copied to MDR or to ALU  
-MAR(Memory address register) - address of memory location from which data is to be fetched or written
+MAR(Memory address register) - holds address of memory location that is to be fetched or written to
 MDR(Memory data register) - temporarily store data read/written to memory - aka memory buffer register
 
 3 factors processor performance:
 1) Clock speed - 1 Hz = 1 clock cycle per second - greater clock speed = instructions executed faster - upgrading always makes faster
-2) No of cores - can process different instructions at once, less wait = faster - 2 cores doesnt mean 2x speed
+  - determined by system clock - generates signals of 0/1s.
+2) No of cores - process multiple instructions at once, less wait = faster - 2 cores doesnt mean 2x speed
+   - core = independent processor - runs its own FDE cycle
 3) Cache size - fetch more frequent instructions quickly, faster access to more data, much quicker than main memory - stays fast on higher capacities
 
 Cache - level 1 - really fast, small storage (2-64 KB)
       - level 2 - less fast, medium storage (256kb- 2MB)
+      - level 3 =  slower, larger
+
+PIPELINING - doing the fetch-decode-execute cycle of multiple instructions simultaneously - whilst one instruction fetched, other decoded, other executed.
+  - holding data in a buffer close to CPU until required - less of CPU is idle
+  - Instruction pipelining  - separating into fetch, decode, execute
+  - Arithmetic pipelining - breaking down arithmetic operations, overlapping them as they are performed
+  
+FDE:
+Fetch - address from PC copied to MAR
+  - instruction copied to MDR (data bus)
+  - PC incremented by 1
+  - value in MDR copied to CIR
+Decode - CIR split into operand & opcode (operand = actual data/address, opcode = type of instruction + hardware)
+Execute - instruction executed
 
 ### Neumann vs Harvard architecture
 Neumann:
 - same data bus to transfer both data & instructions
 - single address bus to transfer addresses of data&instructions
   - same word length for all memory
-- in PCs, servers, embedded system with control functions
-- Programs optimised in size
+- in PCs, servers, embedded systems with control functions
+  Advantages:
+  - Programs optimised in size
+  - Cheaper  - CU easier to design
 
 Harvard:
 - separate memory for data & instructions - different characteristics (e.g read-only vs read-write)
@@ -58,17 +78,23 @@ Harvard:
 - instruction address bus wider than data bus
 - used in DSP - digital signal processing - + Embedded systems
 - programs usually large
+  Advantages:
+  - Quicker execution - D & I fetched in parallel (at same time)
+  - memory can be different sizes - more efficient use of space
+
+Contemporary processor - both Neumann and Harvard combination - use Neumann for D&I in main memory, and Harvard to divide cache into instruction & data caches
+
 
 ### CISC VS RISC
 CISC - Complex - one single instruction - load/store operation - large instruction set - more transistors, less RAM/memory 
-RISC - Reduced - Simple, small instruction set - 1 clock cycle per instruction - faster, larger - more memory
+RISC - Reduced - Simple, small instruction set - 1 clock cycle per instruction - faster, larger - more memory, lower power consumption
 
 CISC - Complex - large instruction set - Single instruction doing loading,operation,storing
 - used more in microcontrollers, embedded systems
 - Adv:
-  - compiler low work to translate high-level language to machine code - code shorter, little RAM required to store
+  - compiler low workload to translate high-level language to machine code - code shorter, little RAM required to store
 - Dis:
-  - only (20%) of specialised instructions built into hardware used in average program
+  - only some(20%) of specialised instructions built into hardware used in average program
   - slower, more transistors - as more complex
 
 RISC - Reduced Instruction - small instruction set 
@@ -77,11 +103,11 @@ RISC - Reduced Instruction - small instruction set
   - pipelining possible - each instruction takes same amount of time
   - faster - execute at least as fast as single CISC instruction
 - Dis:
-  - compiler more work to translate high-level code
+  - compiler more workload to translate high-level code
   - more RAM to store longer machine code
 
 Co-processor - extra processor to supplement functions of cpu - limited functions
-GPU - co-processor - independent processors in parallel - very efficient at image processing, machine learning
+GPU - co-processor - loads of independent processors in parallel - very efficient at image processing, machine learning
 
 Multi-core - multiple independent cores - distribute workload - higher performance
 parallel - single core, use threading
@@ -98,13 +124,81 @@ Why Harvard suitable for embedded system:
 - no need for secondary storage
 - Instructions never changed
 
-### Input 
+### Input
+Keyboard, webcam, magnetic stripe reader, barcode reader, 
 ### Output Devices
-
+- Speakers, projectors
 Barcodes - lines/blanks = 1/0 - 2D barcoder = QR
 Inkjet printer - small, inexpensive - 10 diff colours max - Dis: ink smears
 Laser printer - toner, fast, reliable, good quality - for fliers
 Dot matrix - multi-port stationary uses - expensive, noisy, poor quality
+Touch screen - both input and output
+
+Considerations for devices: speed, accuracy of input (quality), cost, relevance
+
+### Storage
+#### Primary
+RAM - fast memory - data computer currently using
+- faster access speeds than all secondary, even flash
+- more expensive per GB (only have 4-8GB ram)
+- Volatile
+
+ROM - cannot be modified - once programmed, memory cells don't change
+- useful for fixed instructions - e.g BIOS startup 
+- non-volatile
+
+Virtual - remote storage - access by any computer in system (internet)
+- e.g cloud storage (Drive, OneDrive)
+- multiple drives acting like one
+- convenient to access, easy to share
+- Disadvantage: requires internet
+  - limited by network speed
+  - high costs
+
+
+#### Secondary Storage
+CD - for audio files, can store text/digital images
+- very portable
+- immune to cyber threats
+- cheap
+Dis:
+- easily damaged - scratches
+- limited storage
+- slow transfer speeds
+CD-R - can only be written to once
+CD-RW - can be written to multiple times
+CD-ROM - written during production, can only be read from
+
+DVD: higher storage than CD
+Blu-ray - much higher storage than dvd
+
+HDD - high storage (500GB-5TB)
+- slow data transfer speed
+- get damaged over time - by movement - delicate
+
+Magnetic tape:
+- very high storage capacity
+- uses a lot of physical space
+
+Floppy disk - covered thin magnetic disk 
+- very portable
+- small capacity (1-200MB)
+
+Flash - fast and compact
+- info stored in blocks - combined to form pages
+- NOR used for small data (code), NAND for larger data
+- can be erased and reprogrammed electronically
+- non-volatile
+- more expensive
+  
+- flash - similar to RAM, but RAM is volatile
+
+SSD:
+- very portable / light 
+- more resistant to damage (than HDD) - no moving parts
+- very fast - high transfer rate
+- Disadvantage: Cost
+  - limited lifespan - lifespan decreases every time it is written to
 
 ## System software
 
@@ -112,23 +206,31 @@ OS - collection of programs that provide an interface between user & computer:
   1) Memory management  - paging & seg
   2) File management
   3) Peripheral management
-  4) Interrupts
-  5) Security
-  6) UI (User Interface)
-  7) Utility Software:
+  4) Resource management (scheduling)
+  5) Interrupts
+  6) Security
+  7) UI (User Interface)
+  8) Utility Software:
       - Defragmentation
       - Auto backups + updates
       - Virus checks / anti-malware
       - Compression software
-  8) Resource management (scheduling)
 
-Paging - memory held in pages - each 4KB
+Paging - memory held in pages - each 4KB - pages swapped from main memory and hard disk, when needed
 Page table - maps link between physical (RAM) & virtual (logical) memory address space
 Segmentation - logical division of address space into different lengths
 
 Virtual memory - extra disk storage when RAM is full - move from RAM and back
+- memory not being used swapped
+- causes Disk thrashing - computer slows from too frequent swaps between hard disk(virtual) and RAM
 Interrupt - signal from software/device/clock to CPU
+  - different priorities - allocated with processor time
+  - stored in priority queue in interrupt register
 ISR - Internet Service Routine - fixes interrupts - specific routines
+  - checks at end of every FDE cycle
+- Current register contents put onto a stack
+- ISR loaded into RAM - flag set when begins, flag reset when finished
+- contents popped back to registers, FDE cycle continues
 Scheduler - module, managing processor time - multi-task instructions
 
 
@@ -138,8 +240,8 @@ Difference between global vs local variable[2]:
 - Local - only visible in module it is created in
 
 Difference between paging & segmentation[2]:
-- P: physical || S: logical addressing
-- - P: fixed size || S: variable length memory blocks
+- P: physical addressing || S: logical addressing
+- P: fixed size || S: variable length memory blocks
 
 ### Scheduling - how CPU time allocated in multi-access system
 Round Robin - fixed time slice - if not done in time, move to back
@@ -151,8 +253,9 @@ FCFS - a queue - first job arrives, executes until complete || Adv: easy to impl
 
 Shortest Remaining Time - SRT - completion time estimated as a job arrives - job with SRT executed
   - new shorter jobs can take over from current job mid-process
+    - processor starvation
   
-Shortest Job First - total exe time estimaed by user - waiting job with shortest time goes after current job done 
+Shortest Job First - total exe time estimated by user - waiting job with shortest time goes after current job done 
 - Adv: throughput increased, shorter jobs quickly done
 - Dis: no job priority, long job starvation if jobs keep getting added
 
@@ -204,7 +307,7 @@ Driver - provides an interface for OS to interact with hardware
       - protection from malware - affects VM only
       - Running incompatible software
 
-## Application Generation
+### Application Generation
 System software: OS, Utility Software, Libraries, translators
  - provides a platform for application software to run
 libraries & translators - allow programs to use pre-written routines, translated into executable code
@@ -286,7 +389,7 @@ Library - collection of pre-compiled routines, put into program
  - well-tested optimised routines - used by multiple ppl
 
 
-## Types of Programming Languages
+### Types of Programming Languages
 Programming Paradigm - different approaches to using a language to solve a problem / style of programming:
 Imperative - specifies actions to perform with input:
 1) Procedural - easy to write & interpret - sequence of instructions within procedures - Python, Pascal, C#
@@ -320,7 +423,9 @@ OUT - output - 902
 DAT - data storage
 HLT - end (halt) - 000
 
-## Databases
+### Exchanging Data
+
+## Databases  
 Lossy compression - remove unneeded info - less file size, worse quality
 lossless - shrinks & reassembles data again - much larger file size, keep quality
 
