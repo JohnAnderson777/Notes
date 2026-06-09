@@ -214,7 +214,7 @@ OS - collection of programs that provide an interface between user & computer:
       - Defragmentation
       - Auto backups + updates
       - Virus checks / anti-malware
-      - Compression software
+      - Compression softwares
 
 Paging - memory held in pages - each 4KB - pages swapped from main memory and hard disk, when needed
 Page table - maps link between physical (RAM) & virtual (logical) memory address space
