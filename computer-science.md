@@ -214,7 +214,7 @@ OS - collection of programs that provide an interface between user & computer:
       - Defragmentation
       - Auto backups + updates
       - Virus checks / anti-malware
-      - Compression softwares
+      - Compression software
 
 Paging - memory held in pages - each 4KB - pages swapped from main memory and hard disk, when needed
 Page table - maps link between physical (RAM) & virtual (logical) memory address space
@@ -289,9 +289,9 @@ Real-time - used in time-critical/safety-critical systems - performs tasks in gu
 ### BIOS
 BIOS - stored in ROM - first program to run on start-up - tests hardware:
    - POST(Power-on self test) - ensures all hardware connected & functional
-   - Check CPU clock, memory & processor operational
+   - Check CPU clock, memory & processor
    - Test for external memory devices connected
-- After checks done - loads OS into RAM - from hard disk by bootloader
+- After checks done - loads OS into RAM (from hard disk) by bootloader
 
 ### Drivers
 Driver - provides an interface for OS to interact with hardware
@@ -354,18 +354,33 @@ Consider:
   - Costs - implements, maintenance, staff training, license
   - Functionality - features, ease of use
 
+### Translators
+Compilers:
+- all at once - carries out checks first, then compiles
+- initially longer than interpreter - but only need to be done once
+- If changes made, program must be recompiled
+- only executed on certain devices - specific to processor and OS
+- can run without a translator
+  
+Interpreter:
+- line-by-line - stops at any errors
+- slower overall - must be translated every time program run
+- useful for testing sections, debugging (pinpointing errors)
+- can execute on multiple devices - just need correct interpreter - more portable
 
+Assembler - low-level(intermediate):
+- platform-specific to instruction set of processor
+- each line of assembly = 1 line of machine
 
 ### Compiling Stages
 1) Lexical analysis - whitespace & comments removed
-  - rest is analysed for keywords, variables - replaced with tokens, info about tokens stored in symbol table
+  - keywords, variables, constants - replaced with tokens, info about tokens stored in symbol table
 
 2) Syntax analysis - tokens checked for grammar & rules of language - syntax errors flagged  
-  - abstract syntax (parse) tree produced - source code in tree form 
-  - tree produces machine code (code generation)
+  - abstract syntax tree produced - source code in tree form 
   - Semantic analysis - logic errors checked
 
-3) Code generation - parse tree makes machine code
+3) Code generation - syntax tree used to make machine code
   
 4) Optimisation - searches to make code more efficient 
       - Efficiency - reduces execution time 
@@ -374,7 +389,7 @@ Consider:
  
 
 
-Linker - external compiled object code (modules/libraries) combined with program
+Linker - external compiled code (modules/libraries) linked with program
 - Static - added directly to main file - increases file size
 - Dynamic - addresses of modules referenced in code
       - external updates change in main file - no rewriting code
@@ -388,20 +403,99 @@ Library - collection of pre-compiled routines, put into program
  - ready-to-use, error free, reuseable
  - well-tested optimised routines - used by multiple ppl
 
+## Software Development
+Cycle : AS A CIRCLE: 
+- Analysis, Design, Implementation, Evaluation, Maintenance
+
+Analysis - defines what system will do, not how (+ what currently does) 
+  - outputs 'System Spec.' or 'User Requirements'
+  - Interviews, questionnaries, documentation
+
+Design - Description: data,formats, Database design, input & output screens, testing used
+
+Implementation - coding & testing - writing documentation, installing software
+
+Evaluation(Acceptance testing) - check all works as intended - checked against original doc.
+
+Maintenance: Corrective - bugs found when software used, no matter how thoroughly tested
+- Adaptive - over time, user reqs change, software has to adapt to meet needs
+- Perfective - always making software better,faster,more functional
+
+### Testing:
+Black Box - independent of code - looks at program spec., creates test data covering inputs, outputs, functions
+  - basically testing the interface of a program, without knowing any code
+White box - depends on code logic - tests each path through code >=once
+
+Alpha testing - by developers - reveal errors & omissions in System Reqs.
+ - system might not do as intended
+Beta testing - given to number of potential users - report any faults - real users may do unexpected things
+  - commercial software developed - Microsoft Windows/Word etc
+
+### Models:
+Waterfall - each stage completed before next started - customer doesnt see end product until completed
+ - any change means has to restart (from stage changed)
+ - Adv: simple to understand & use
+   - each stage separate, self-contained, defined outcomes & documentation
+   - easy management
+   - good for small projects - requirements well understood
+ - Dis: not much user involvement after Analysis
+   - no working software until late in cycle
+   - if finished product not wanted, too late to change
+Used: clear, unambiguous requirements | short projects | tech well understood
+
+Spiral - loops through 4 cycle stages - each loop creates refined prototype until software meets requirements
+- Adv: easy to manage
+  - issues identified early - software produced early
+  - any changes can be made early
+  - added functionality/ideas added during process
+  - end result more what user wants
+- Dis: time-consuming - takes longer || therefore more costly
+- bad for small projects
+Used: medium/high-risk projects | unsure of needs / requirements complex | very large projects - new tech innovations over years - need to change
+
+Agile - rapid incremental cycles - each version builds on previous
+- each version thoroughly tested before release
+- little planning needed
+- Adv: rapid, continuous software delivery - customer satisfaction
+  - customers, devs, testers constantly interact
+  - working software delivered frequently (weeks)
+  - software easily adapted - late changes can be made
+- Dis: lack on design and documentation
+  - project can fail if customer not clear about final outcome
+  - bad for novice programmers - need good decisions
+Used when: small, new changes made frequently | developing businesses - user needs continuously changes
+ - good for small, time-critical projects
+Extreme programming - agile - frequent releases in short development cycles 
+  - improve productivity & responsiveness to changing customer reqs.
+
+RAD - workshops % focus groups get requirements, no doc
+- prototyping continually refines system due to user feedback
+- each part of system made in strict time limit - just good enough
+- components reused when possible
+
+Algorithm - set of instructions used to solve a problem. A good algorithm:
+  1) Clearly defined Inputs
+  2) Always produces a valid output (for any input)
+  3) Deals with invalid outputs
+  4) Stopping condition
+  5) Well-documented
+  6) Comments 
+  
 
 ### Types of Programming Languages
 Programming Paradigm - different approaches to using a language to solve a problem / style of programming:
-Imperative - specifies actions to perform with input:
+
+Imperative - clearly specifies actions to perform with input:
 1) Procedural - easy to write & interpret - sequence of instructions within procedures - Python, Pascal, C#
 2) OOP - focuses on reusability, easy to update & maintain - Java, C++
 
 Declarative - states desired result, language finds best way of solving it 
-- SQL (create,amend,query databases)
-- how solution obtained abstracted from user:
+- SQL (create,amend,query databases), AI
+- how solution obtained abstracted from user
 1) Functional - reuse set of functions - made up of function calls, often combined within each other
    - linked closely to maths
    - Haskell, Javascript
-2) Logic - defines set of facts based on problem, queries for answers to problems - consists of logical statements - Prolog
+2) Logic - defines set of facts based on problem, queries to find answers to problems - consists of logical statements - Prolog
 
 Structured - uses sequence,selection,iteration and recursion, not 'goto' statements (subsection of procedural)
 - modular techniques split large problem to manageable chunks
@@ -409,13 +503,14 @@ Structured - uses sequence,selection,iteration and recursion, not 'goto' stateme
 Assembly Language - mnemonics - easier to use than machine code
 - each mnemonic represented by numeric code
 - commands processor-specific - directly interacts with CPU registers
+
 ADD - ADD  - 1xx
 SUB - subtract - 2xx
 STA - store - 3xx
 LDA - load - 5xx
 .
 BRA - branch always - without checking - 6xx
-BRZ - Branch if zero - 7xx
+BRZ - Branch if (value in accumulator) zero - 7xx
 BRP - branch if zero or positive - 8xx
 .
 INP - input - 901
@@ -423,9 +518,16 @@ OUT - output - 902
 DAT - data storage
 HLT - end (halt) - 000
 
-### Exchanging Data
+memory Addressing Modes - part of opcode - how operand interpreted:
+Immediate - operand = actual value - in binary
+Direct - operand = address of value (used in LMC)
+Indirect - operand = address of register that holds the address of data/value
+Indexed - index register - stores certain value 
+  - address of operand found by adding operand to index register
+    - necessary - adds an offset - to access data stored contiguously (array)
 
-## Databases  
+
+## Exchanging Data
 Lossy compression - remove unneeded info - less file size, worse quality
 lossless - shrinks & reassembles data again - much larger file size, keep quality
 
@@ -435,8 +537,9 @@ asymmetric - 2 related keys, public key: to encrypt private: only for you, to de
 
 Hashing - mapping between arbitrary length input - smaller fixed output - one-way (irreversible)
 
+### Databases  
 Flat file - single file - one entity
-primary key -  unique identifier of an entity
+primary key -  unique identifier of an entity in a record
 1-to-1 - husband & wife
 1-to many - mother & children || customer & order
 many-to-many - student & course || film & actor
@@ -480,7 +583,7 @@ Benefits of relational instead of flat file [2/3]:
 - allow for complex queries and searches performed
 
 
-## Networks
+### Networks
 ### Internet
 Internet - network of inter-connected networks - largest public network (largest WAN)
 WWW, World Wide Web - collection of resources accessed by the internet
@@ -488,7 +591,7 @@ Backbone - set of dedicated connections connecting several networks at certain p
 ISP - Internet Service Provider - provides access to individual end-users
 IP - unique identifier of device and destination, like an address on package
 IPv4 - 4 octet values (4 numbers made by 8 bits) - separated by full stop - e.g 14.132.250.10 - only 4.3Bil addresses total
-IPv6 - 340 undecillion addresses (not needed)
+IPv6 
 
 URL - specify means of accessing resource across network and location - protocol + domain name
   - protocol (https://) - specifies resources requires HTTP (webpage)
@@ -533,6 +636,7 @@ Mesh topology - each node connected to every node - only 1 node requires interne
 physical topology - actual layout
 logical topology - shape of path that data travels in  -how components communicate across physical topology
 
+### packets
 
 Circuit switching - direct link between 2 devices for duration of communication - sets up a path between devices, when used next time, established route
   - can only connect devices on same transfer rate
@@ -581,6 +685,18 @@ SMTP - Simple Mail transfer - transfer outgoing emais from one server to another
 
 ### Web Technologies
 
+Client-Side - on device:
+- immediate response to user actions
+- executes quickly
+- developers more control over look/behaviour of website
+- less workload on server
+
+Server-Side - SQL,PHP:
+- doesnt need plugins
+- does large calculations much faster than client
+- not browser/device dependent
+- more Secure
+
 **Questions**:
 Advantage of CSS external file than embedded in HTML[3]:
 - Content and formatting separate 
@@ -590,6 +706,11 @@ Advantage of CSS external file than embedded in HTML[3]:
 
 ## Data Types
 Primitive data type - built into a programming language - integer,float,string,boolean,character
+
+Karnuagh map:
+- circle all 1s in rectangles (as big as possible)
+- ONLY groups of 1s with edges equal to power of 2 (1,2,4 in a row) circled
+  - wraparound included (edge of table wraps around to start of other end - like snake game)
 
 ### Binary
 To represent negative numbers:
@@ -764,6 +885,7 @@ Inheritance - child classes (subclasses) inherit data, behaviour from parent cla
 - 'is (Object A) a (Object B)' rule - find when inheritance is appropriate
 Polymorphism - process objects differently depending on class
  - overriding - defining method with same name + argument types as an inherited method from superclass
+ - overloading - passing in parameters into method
 
 - works best in situations where you can encapsulate and model entities as objects.
 - useful for GUIs
@@ -773,7 +895,11 @@ Polymorphism - process objects differently depending on class
   2. encapsulation reduces complexity - can hide methods & attributes from user
   3. Maintenance easier - can troubleshoot and modify program easier
   4. Reinforces security
-
+- Disadvantage:
+  1. alternate way of thinking - difficult for people not used to it
+  2. not suitable for all problems - if low reusability - could make longer, inefficient program
+  4. bad for small programs
+  
 ### OOP Code
 Classes:
 class [name]:
@@ -786,21 +912,6 @@ constructor Method:
     actual code 
    }
 
-
-## Abstraction
-Representational abstraction - representation arrived at by removing unnecessary details
-Uses:
-- any computer model, new car, flight simulator
-- maps
-data abst - how data actually represented hidden - abstract data types
-
-- make sure function never crashes - test for an empty list OR precondition
-Precondition advantages - user knows what checks before subroutine
-- if no preconditions - checks in subroutine - less code
-- reusable
-
-Procedural abstraction - using procedure to carry out an algorithm - sequence of steps for completing a task
-procedure interface - necessary info seen by user
 
 
 ## PAPER 1 PP QUESTIONS:
@@ -911,6 +1022,21 @@ Abstraction - separating logical & physical aspects of a problem
 - problem abstraction - removing details until problem is one already solved
 - after abstraction - algorithms + data structures designed to solve problem
 - real-world models eg: climate change model predicting temperature, aircraft simulator.
+
+### Abstraction
+Representational abstraction - representation arrived at by removing unnecessary details
+Uses:
+- any computer model, new car, flight simulator
+- maps
+data abst - how data actually represented hidden - abstract data types
+
+- make sure function never crashes - test for an empty list OR precondition
+Precondition advantages - user knows what checks before subroutine
+- if no preconditions - checks in subroutine - less code
+- reusable
+
+Procedural abstraction - using procedure to carry out an algorithm - sequence of steps for completing a task
+procedure interface - necessary info seen by user
 
 ### Thinking Ahead
 Input --> problem --> (storage) --> Output
@@ -1154,70 +1280,6 @@ Terminal - end of development - checks how software performs with a certain set 
  - valid data - correct || Extreme(boundary) - on boundary of valid range
  - erroneous - incorrect data outside range or wrong type
 - null data - nothing entered
-
-## Software Development - Actually in Paper 1 - only P2 for mocks
-Cycle : AS A CIRCLE: 
-- Analysis, Design, Implementation, Evaluation, Maintenance
-Analysis - defines what system will do, not how (+ what currently does) 
-  - outputs 'System Spec.' or 'User Requirements'
-  - Interviews, questionnaries, documentation
-Design - Description: data,formats, Database design, input & output screens, testing used
-Implementation - coding & testing - writing documentation, installing software
-Evaluation (Acceptance testing) - check all works as intended - checked against original doc.
-Maintenance: Corrective - bugs found when software used, no matter how thoroughly tested
-Adaptive - over time, user reqs change, software has to adapt to meet needs
-Perfective - always making software better,faster,more functional
-
-### Testing:
-Black Box - independent of code - looks at program spec., creates test data covering inputs, outputs, functions
-White box - depends on code logic - tests each path through code >=once
-
-Alpha testing - by developers & user - reveal errors & omissions in System Reqs.
- - system might not do as intended
-Beta testing - given to number of potential users - report any faults - real users may do unexpected things
-  - commercial software developed - Microsoft Windows/Word etc
-
-### Models:
-Waterfall - each stage completed before next started - customer doesnt see end product until completed
- - any change means has to restart
- - Adv: simple to understand & use
-   - each stage separate, self-contained, defined outcomes & documentation
-   - easy management
-   - good for small projects - requirements well understood
- - Dis: not much user involvement after Analysis
-   - no working software until late in cycle
-   - if finished product not wanted, too late to change
-Used: clear, unambiguous requirements | short projects | tech well understood
-
-Spiral - loops through 4 cycle stages - each loop creates refined prototype until software meets requirements
-- Adv: easy to manage
-  - issues identified early - software produced early
-  - any changes can be made early
-  - added functionality/ideas added during process
-  - end result more what user wants
-- Dis: time-consuming - takes longer || therefore more costly
-- bad for small projects
-Used: medium/high-risk projects | unsure of needs & possibilities | requirements complex | large projects - new tech innovations over years - need to change
-
-Agile - rapid incremental cycles - each version builds on previous
-- each version thoroughly tested before release
-- little planning needed
-- Adv: rapid, continuous software delivery - customer satisfaction
-  - customers, devs, testers constantly interact
-  - working software delivered frequently (weeks)
-  - software easily adapted - late changes can be made
-- Dis: lack on design and documentation
-  - project can fail if customer not clear about final outcome
-  - bad for novice programmers - need good decisions
-Used when: small, new changes made frequently | developing businesses - user needs continuously changes
- - good for small, time-critical projects
-Extreme programming - agile - frequent releases in short development cycles 
-  - improve productivity & responsiveness to changing customer reqs.
-
-RAD - workshops % focus groups get requirements, no doc
-- prototyping continually refines system due to user feedback
-- each part of system made in strict time limit - just good enough
-- components reused when possible
 
 ## Algorithms
 Functions - maps one set of values to another
