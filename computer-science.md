@@ -1035,8 +1035,18 @@ Precondition advantages - user knows what checks before subroutine
 - if no preconditions - checks in subroutine - less code
 - reusable
 
-Procedural abstraction - using procedure to carry out an algorithm - sequence of steps for completing a task
+Procedural abstraction - performs a function without knowing how it is done 
+Abstraction by generalisation - grouping together similarities in a problem - identify what problem is
+- a common solution to solve problems
+algorithm - sequence of steps for completing a task
 procedure interface - necessary info seen by user
+
+Abstraction:
+- more efficient design - focus on important parts
+- reduces project time
+- prevents program from getting unnecessarily large
+- TCP/IP example of abstraction
+- OOP is an abstraction of real-world objects
 
 ### Thinking Ahead
 Input --> problem --> (storage) --> Output
@@ -1046,7 +1056,7 @@ When making solution:
 - algorithm correct - works for all possible inputs
 - algorithm efficient - can involve huge data, need quickest algorithm
 Specifying preconditions advantages:
-- program components reusable - save time writing &  testing functions - already tested
+- program components reusable - save time writing & testing functions - already tested
 - less unnecessary checks
 - easier to debug & maintain - clear + shorter
 Programming standards:
@@ -1066,10 +1076,10 @@ Decomposition - breaking complex problem into smaller, more manageable sub-probl
  - each smaller part solved individually & combined
  - Adv: large teams to work on one problem at once, makes hard problems simple to solve
  - Structure chart - visually represent large problem broken into sub-problems
-     - each box is smaller problemkkk
+     - each box is smaller problem
      - lines show which bigger problem box is part of
 
-#### Logically
+#### Logically - Decision making
 Pseudocode - plan algorithms - focusing on logic and steps, not Syntax - very readable, easy to understand
 Flow diagram - visually represent algorithm steps - arrow shows flow of control
 - oval =start/end, rectangle = process, parallelogram = input/output, diamond = decision (Yes or No)
@@ -1121,9 +1131,13 @@ Pass by value - copy of value is passed to subroutine (different memory address)
 Pass by reference - ADDRESS of parameter passed to subroutine 
   - changing inside subroutine changes it outside - they refer to same memory location
 
+Scope - section of code which a variable is available
 Global variables - visible & accessible anywhere in program
+  - require more memory - use memory for whole program run time
+    - local variables deleted when subroutine ends
 Local variables - only visible/accessible in subroutine/module it was created/declared in
-  - Adv: Subroutines independent of program - problems outside don't affect
+  - multiple variables with same name in different routines
+  - Adv: Subroutines independent of program - problems outside don't affect (subroutine self-contained)
 Encapsulation - subroutines fully independent to rest of program
 Modular programming - breaking down long, complex program into many subtasks/routines
 
@@ -1145,7 +1159,7 @@ Advantages:
 - natural way to process recursive data structures (trees)
 Disadvantages:
 - Hard to trace - keeps multiple instances of function at once
-- More memory - store stack frames
+- More memory - store stack frames - stack overflow chance
 - Slower - manage stack operations 
 
 
@@ -1159,24 +1173,26 @@ Stack overflow - call stack runs out of memory
 
 ### IDE
 Integrated Development Environment - software packages that facilitate software development
+- a program which provides a set of tools for programmers
 Features:
 1) Line numbers
 2) Code editor - includes: syntax highlighting, auto-indentation+completion
 3) Translator (Compiler/Interpreter) - built in - 'Run' button
 4) Run-Time environment - run programs to test - multiple RTEs available, simulate on different devices
 5) debug tools - highlight syntax errors + debugger
-6) keyword highlighting
+
 
 Tools:
 1) breakpoint - debugging-  program stops on that line - can trace variable values
 2) watch - value displayed each time variable changes
-3) Stepping - step through program line at a time
+3) Stepping - step through program - execute one line at a time
+4) Debugging tools - detects errors and tells user what line and highlights error.
 
 
 ### Use of OOP - programming paradigm
 OOP - system viewed as a set of objects - each has own (data) attributes + methods (procedures)
 Class - template for an object - defines state(attributes) and behaviour(methods) of object.
-Attribute - opbjects properties - data/information about object
+Attribute - objects properties - data/information about object
 Methods - actions object can perform
 instantiation - creating an object with a class
 - object = single instance of a class 
@@ -1249,7 +1265,8 @@ Divide-and-conquer:
 3) Merge - solutions recombined - full problem now solved
 - used in quick, merge sort, binary search
 Time complexity of divide & conquer = O(log n)
-- has same issues as recursion disadvantages
+- problem halved each iteration - breaks complex problems down quickly
+- has same issues as recursion disadvantages (stack overflow, tracing)
 
 Abstraction:
 levels of abstraction - complex problem divided to smaller parts
@@ -1261,15 +1278,24 @@ abstraction by generalisation - group sections with similar functionality - segm
 Backtracking - recursive - incrementally finds a solution based on visiting correct paths, if path is invalid then algorithm backtracks to last correct path
 - depth-first traversal
 
-Heuristics
+Data mining - identifies patterns/outliers in large data - spot trends & correlations that are not obvious
+  - can make predictions about future (based on trends)
+  - useful in business & marketing decisions
+  - involives personal data - must follow law 
 
-Data mining - identifies patterns/outliers 
+Heuristics - un-optimal - approximate solution to problem - not fully accurate/complete
+  - for intractable problems 
+  - actual solution Intractable (unreasonably time-consuming or hard to find)
 
-Performance modelling
+Performance modelling - testing - uses mathematical methods to test multiple loads on different OS.
+  - cheaper, quicker, safer than testing
+  - help judge system capabilities
+  - good for safety-critical systems - where not safe to do a real trial run
 
-Pipelining
+Pipelining - modules divided into individual tasks - tasks developed in parallel
 
-Visualisation to solve problems
+Visualisation - data presented so easier to understand - identify un-obvious trends 
+- data = graphs, trees, charts, tables (used with data mining)
 
 
 
@@ -1315,10 +1341,31 @@ Rules:
     - 2 nested loops
 - O(2^n) = Exponential time 
 
-Types of measurements:
+Types of measurements:$$
 - Worst Case (usual)
 - Best Case
 - Average Case
+
+## 2.3.1 - DATA STRUCTURES 
+queue - back = next available space
+
+pop()/dequeue():
+if isEmpty:
+  return error
+else:
+  toDequeue/remove = queue[front]
+  queue[front] = ""
+  front += 1 
+  return toDequeue
+
+Linked list  - nodes - pointer to next item in list
+N.next - node after N
+- head = first item
+- tail = last
+- uses linear search
+
+Tree - undirected - nodes+edges - traversed  - cant contain cycles/loops
+Graph - directed - no root node, multiple paths
 
 ## Searching
 
@@ -1339,12 +1386,14 @@ Folding method:
 for letters - Alphanumeric data:
 - use ASCII code for each character - apply hashing algorithm
 
-Linear search - unordered - items searched one-by-one until requird item found/end list reached
+Linear search - unordered - items searched one-by-one until required item found/end list reached
 - time complexity for linear search = O(n)
+  - best case (first item) = O(1)
 - Psuedocode for linear:
+
       function linearSearch(list, itemSought):
         i = 0
-        while i < length(list):
+        while i < length(list) - 1:
           if list[i] == itemSought then:
             return i
           i += 1
@@ -1352,7 +1401,8 @@ Linear search - unordered - items searched one-by-one until requird item found/e
 
 Binary Search - ordered - dividing list in half that could have required item
 - time complexity = O(log n)
-- Pseudocode:
+- Pseudocode - set first and last pointers, and middle:
+  
       function binarySearch(list, itemSought):
           first = 0
           last = len(list) - 1
@@ -1373,9 +1423,9 @@ Binary Search - ordered - dividing list in half that could have required item
         else:
           middle = first+last / 2
           if list[middle] > itemSought:
-            return binarySearch(list, ItemSought, first, midpoint-1)
+            return binarySearch(list, ItemSought, first, middle-1)
           if list[middle] < itemSought:
-            return binarySearch(list, ItemSought, midpoint+1, last)
+            return binarySearch(list, ItemSought, middle+1, last)
           else:
             return middle  
 
@@ -1384,46 +1434,67 @@ Binary Search - ordered - dividing list in half that could have required item
 Bubble sort - compare each item with one next to it - if greater, swap
     - last element will be correct after first pass
     - repeats n-2 times
+    - ONE pass = 'bubble' goes through list one time (can do multiple swaps) - last element will be correct
   - Adv: Easy to implement, little memory
   - Dis: not efficient - time complexity = O(n^2)
+    - best case: O(n) already sorted
 
 - Psuedocode (flag for no unneccessary passes):
-  list = [list] 
-  sorted = false
-  while sorted = False:
+
+  list = [list]
+
+  sorted = true
+  while sorted = True:
+    sorted = False
     for i = 1 to len(list) - 1:
       if list[i-1] > list[i]:
         swap(list[i-1], list[i])
         sorted = True
+
+**better version**
+
+for i = 0 to len(list) - 1:
+    sorted = True
+    for j = 0 to len(list) - (i+1):
+      if list[j] > list[j+1]:
+      swap(list[j], list[j+1])
+      sorted = False
+
+    if sorted:
+      break
   
 
 Insertion - takes one item at a time, places in correct location
+- Starts at second item, compares with item on left, moved if smaller - repeats up list
 - more efficient than bubble
 - time complexity = O(n^2)  --  if nearly sorted, close to O(n)
 - Adv: easy to implement, little memory || Dis: not efficient (better than bubble)
 - Psuedocode:
-      procedure insertionSort(list):
-
+  
       for i = 1 to len(list) - 1:
         key = list[i]
         j = i - 1
 
-      while j >= 0 AND list[j] > key:
-        list[j+1] = list[j]
-        j -= 1
-      list[j+1] = key
+        while j >= 0 AND list[j] > key:
+          list[j+1] = list[j]
+          j = j - 1
+          list[j+1] = key
 
 Merge Sort - divide & conquer - divides until sublists are 1 item, merged and sorted into single list
+- recursive   
 - time complexity = O(n log n)
 - Adv: very efficient
 - Dis: slower for small lists, additional memory
 - Psuedocode:
+
         mergesort(list)
-        if len(list) > 1:
-          mid = len(list) //(div) 2
+        if len(list) <= 1:
+          return list
+    
+        else:
+          mid = len(list) / 2
           lefthalf = list[:mid]
           righthalf = list[mid:]
-
         mergesort(lefthalf)
         mergesort(righthalf)
 
@@ -1431,7 +1502,7 @@ Merge Sort - divide & conquer - divides until sublists are 1 item, merged and so
 Quick Sort - select value - pivot value(usually 1st item) - at split point:
   - all values < pivot in first section
   - all values > pivot in second section
-  - recursively repeat process for all sections until sorted
+  - recursively repeat process for all sections until sorted (all items have been pivots)
 - split point - actual position of pivot value in sorted list - point where list is split
 - time complexity = O(n log n)
 - Advantages: extremely fast - Doesn't need additional memory (like merge sort)
@@ -1446,6 +1517,8 @@ Depth-first - stack - go as far down one route, backtrack & take next route
 - Uses:
   - scheduling jobs
   - mazes
+
+
 Breadth-first - queue - visit all nodes connecting to A, then move to B
 - O(n + E) (n = no of nodes, E = edges)
 - Uses:
@@ -1455,8 +1528,11 @@ Breadth-first - queue - visit all nodes connecting to A, then move to B
 
 Binary tree:
 - less = left, more = right
-- Pre-order - Root, left, right - Root, LR
-- Algorithm: 
+- Pre-order - Root, left, right - R.LR
+- In-order - Left, Root, Right - L.R.R
+- Post-order - Left, Right, Root - LR.
+
+Pre-order Algorithm: 
 
 {
 print(tree[p].data)
@@ -1466,12 +1542,22 @@ if tree[p].right <> -1:
   traverse(tree[p].right)
 }
 
-- In-order - Left, Root, right - L,Root,R
-- Post-order - Left, Right, Root- LR,Root
-  - algorithm same but, print(tree[p].data) at END OF CODE
+
+- in/post-order algorithm same but, print(tree[p].data) at END OF CODE
 
 
 ## Dijkstra Algorithm - Shortest Path
+Dijkstra - finds shortest path between two nodes in a weighted graph
+  - doesnt work for negative values
+  - uses a PRIORITY QUEUE
+
+
+A* Algorithm - improvement of dijkstra's:
+2 cost functions:
+1) actual cost between 2 nodes (same as dijkstras)
+2) heuristic - approximate cost from a node to final node 
+- heuristic added onto actual cost, when finding distance between nodes
+- faster than Dijkstra's - depends largely on accuracy/consistency of heuristic
 
 A* algorithm uses heuristic to determine next best node to follow 
 Dijkstra's shortest path algorithm finds path between one node and all other nodes.
